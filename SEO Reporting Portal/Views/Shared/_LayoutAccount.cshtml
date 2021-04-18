@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SEO_Reporting_Portal</title>
+    <link href="~/lib/bootswatch/minty/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="~/css/login.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="account-container">
+        <div class="wrap-login100">
+            @RenderBody()
+            <div class="login100-more" style="background-image: url('/images/account/login/bg-01.jpg');">
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

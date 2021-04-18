@@ -1,0 +1,339 @@
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\appsettings.json
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\libman.json
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.exe
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.deps.json
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.runtimeconfig.json
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.runtimeconfig.dev.json
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\ref\SEO Reporting Portal.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.pdb
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.Views.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.Views.pdb
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Humanizer.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csprojAssemblyReference.cache
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.AssemblyInfoInputs.cache
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.AssemblyInfo.cs
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csproj.CoreCompileInputs.cache
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorAssemblyInfo.cache
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorAssemblyInfo.cs
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\staticwebassets\SEO Reporting Portal.StaticWebAssets.Manifest.cache
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\staticwebassets\SEO Reporting Portal.StaticWebAssets.xml
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\scopedcss\bundle\SEO Reporting Portal.styles.css
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.TagHelpers.input.cache
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.TagHelpers.output.cache
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorCoreGenerate.cache
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorTargetAssemblyInfo.cache
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorTargetAssemblyInfo.cs
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.Views.pdb
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csproj.CopyComplete
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\ref\SEO Reporting Portal.dll
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.pdb
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.genruntimeconfig.cache
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_AdminSidebarPartial.cshtml.g.cs
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_UserSidebarPartial.cshtml.g.cs
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Dashboard\AdminDashboard.cshtml.g.cs
+C:\Users\sk\source\repos\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Dashboard\UserDashboard.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\appsettings.json
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\libman.json
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.exe
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.deps.json
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.runtimeconfig.json
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.runtimeconfig.dev.json
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\ref\SEO Reporting Portal.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.pdb
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.Views.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.Views.pdb
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Humanizer.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csprojAssemblyReference.cache
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.AssemblyInfoInputs.cache
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.AssemblyInfo.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csproj.CoreCompileInputs.cache
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorAssemblyInfo.cache
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorAssemblyInfo.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\staticwebassets\SEO Reporting Portal.StaticWebAssets.Manifest.cache
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\staticwebassets\SEO Reporting Portal.StaticWebAssets.xml
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\scopedcss\bundle\SEO Reporting Portal.styles.css
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.TagHelpers.input.cache
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.TagHelpers.output.cache
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorCoreGenerate.cache
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Dashboard\AdminDashboard.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Dashboard\UserDashboard.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_AdminSidebarPartial.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_UserSidebarPartial.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorTargetAssemblyInfo.cache
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorTargetAssemblyInfo.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.Views.pdb
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csproj.CopyComplete
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\ref\SEO Reporting Portal.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.pdb
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.genruntimeconfig.cache
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_LayoutAccount.cshtml.g.cs
+C:\Users\Shahzer\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Users\UserForm.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\appsettings.json
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\libman.json
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.exe
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.deps.json
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.runtimeconfig.json
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.runtimeconfig.dev.json
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\ref\SEO Reporting Portal.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.pdb
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.Views.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.Views.pdb
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Humanizer.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csprojAssemblyReference.cache
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.AssemblyInfoInputs.cache
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.AssemblyInfo.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csproj.CoreCompileInputs.cache
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorAssemblyInfo.cache
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorAssemblyInfo.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\staticwebassets\SEO Reporting Portal.StaticWebAssets.Manifest.cache
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\staticwebassets\SEO Reporting Portal.StaticWebAssets.xml
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\scopedcss\bundle\SEO Reporting Portal.styles.css
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.TagHelpers.input.cache
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.TagHelpers.output.cache
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorCoreGenerate.cache
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Dashboard\AdminDashboard.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Dashboard\UserDashboard.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_AdminSidebarPartial.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_LayoutAccount.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_UserSidebarPartial.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Users\UserForm.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorTargetAssemblyInfo.cache
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorTargetAssemblyInfo.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.Views.pdb
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csproj.CopyComplete
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\ref\SEO Reporting Portal.dll
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.pdb
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.genruntimeconfig.cache
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Users\Index.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\Index.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\UploadForm.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\Index.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\sk\Downloads\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\SetPassword.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\appsettings.json
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\libman.json
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.exe
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.deps.json
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.runtimeconfig.json
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.runtimeconfig.dev.json
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\ref\SEO Reporting Portal.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.pdb
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.Views.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.Views.pdb
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Humanizer.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csprojAssemblyReference.cache
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.AssemblyInfoInputs.cache
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.AssemblyInfo.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csproj.CoreCompileInputs.cache
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorAssemblyInfo.cache
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorAssemblyInfo.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\staticwebassets\SEO Reporting Portal.StaticWebAssets.Manifest.cache
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\staticwebassets\SEO Reporting Portal.StaticWebAssets.xml
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\scopedcss\bundle\SEO Reporting Portal.styles.css
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.TagHelpers.input.cache
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.TagHelpers.output.cache
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorCoreGenerate.cache
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\Index.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\SetPassword.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Dashboard\AdminDashboard.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Dashboard\UserDashboard.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\Index.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\UploadForm.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_AdminSidebarPartial.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_LayoutAccount.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_UserSidebarPartial.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Users\Index.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Users\UserForm.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorTargetAssemblyInfo.cache
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorTargetAssemblyInfo.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.Views.pdb
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csproj.CopyComplete
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\ref\SEO Reporting Portal.dll
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.pdb
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.genruntimeconfig.cache
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\AdminReports.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\UserReports.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\Comments.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\ChangePassword.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\ResetPassword.cshtml.g.cs
+C:\Users\Shahzer\Downloads\Compressed\SEO Reporting Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\ForgotPassword.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\appsettings.Development.json
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\libman.json
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\appsettings.json
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.exe
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.deps.json
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.runtimeconfig.json
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.runtimeconfig.dev.json
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\ref\SEO Reporting Portal.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.pdb
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.Views.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\SEO Reporting Portal.Views.pdb
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Humanizer.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\MySqlConnector.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csprojAssemblyReference.cache
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.AssemblyInfoInputs.cache
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.AssemblyInfo.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csproj.CoreCompileInputs.cache
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.MvcApplicationPartsAssemblyInfo.cache
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorAssemblyInfo.cache
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorAssemblyInfo.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\staticwebassets\SEO Reporting Portal.StaticWebAssets.Manifest.cache
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\staticwebassets\SEO Reporting Portal.StaticWebAssets.xml
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\scopedcss\bundle\SEO Reporting Portal.styles.css
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.TagHelpers.input.cache
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.TagHelpers.output.cache
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorCoreGenerate.cache
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\ChangePassword.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\ForgotPassword.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\Index.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\ResetPassword.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Account\SetPassword.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Dashboard\AdminDashboard.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Dashboard\UserDashboard.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\AdminReports.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\Comments.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\Index.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\UploadForm.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\UserReports.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_AdminSidebarPartial.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_LayoutAccount.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_UserSidebarPartial.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Users\Index.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Users\UserForm.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorTargetAssemblyInfo.cache
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.RazorTargetAssemblyInfo.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.Views.pdb
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.csproj.CopyComplete
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\ref\SEO Reporting Portal.dll
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.pdb
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.genruntimeconfig.cache

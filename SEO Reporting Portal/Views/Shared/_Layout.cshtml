@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SEO_Reporting_Portal</title>
+    <link href="~/lib/bootswatch/minty/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="~/lib/dropzone/min/dropzone.min.css" rel="stylesheet" />
+    <link href="~/lib/select2/css/select2.css" rel="stylesheet" />
+    <link href="~/lib/toastr/build/toastr.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/css/layout.css" rel="stylesheet" />
+    <link href="~/css/dashboard.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="page-wrapper chiller-theme toggled">
+
+        @*<header class="main-header">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+                </nav>
+            </header>*@
+
+
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+            <i class="fas fa-bars"></i>
+        </a>
+
+        @if (User.IsInRole(Roles.Administrator.ToString()))
+        {
+            <partial name="_AdminSidebarPartial" />
+        }
+        else if (User.IsInRole(Roles.User.ToString()))
+        {
+            <partial name="_UserSidebarPartial" />
+
+        }
+
+        <main class="page-content">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </main>
+
+        <footer class="text-center">
+            <div class="mb-2">
+                <small>
+                    © @DateTime.Now.Year - by - <a target="_blank" rel="noopener noreferrer" href="https://arkitektz.com">
+                        Arkitektz
+                    </a>
+                </small>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="~/lib/dropzone/js/dropzone.min.js"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.js"></script>
+    <script src="~/lib/select2/js/select2.js"></script>
+    <script src="~/lib/axios/axios.js"></script>
+    <script src="~/lib/toastr/build/toastr.min.js"></script>
+    <script src="~/lib/signalr/js/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
+    <script src="~/js/layout.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Users";
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-3">
+            <div class="card-header">
+                <span>Users</span>
+                <div class="float-right">
+                    <a asp-action="Create" asp-controller="Users"><i class="fa fa-plus"></i> <span>New User</span></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover" id="user-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Contract Start Date</th>
+                            <th scope="col">Contract End Date </th>
+                            <th scope="col">Email Confirmed</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(function () {
+            getUsers();
+            $('.table tbody').on('change', '.dd-user-status', async function () {
+                const userId = $(this).parents('tr').attr('id');
+                const selectedStatus = $(this).find(":selected").val()
+                const { data, status } = await axios.put(`/api/users/updateUserStatus/${userId}`, { status: selectedStatus });
+                if (status === 200)
+                    toastr.success('Successfully updated');
+                else
+                    toastr.success('Some Error Occured');
+            });
+        });
+
+        async function getUsers() {
+            const response = await axios.get("/api/users");
+            const usersMarkup = response.data.map(user =>
+                `<tr id=${user.id}><td>${user.fullName}</td><td>${user.email}</td><td>${user.contractStartDate}</td><td>${user.contractEndDate}</td><td>${user.emailConfirmed}</td><td><select class="dd-user-status"><option value="Active" ${user.status === 'Active' ? 'selected' : ''}>Active</option><option value="Suspended" ${user.status === 'Suspended' ? 'selected' : ''}>Suspend</option><option value="Deleted" ${user.status === 'Deleted' ? 'selected' : ''}>Delete</option></select></td></tr>`
+            )
+
+            $('table tbody').append(usersMarkup.join(''));
+            $('#user-table').DataTable();
+        }
+
+    </script>
+}

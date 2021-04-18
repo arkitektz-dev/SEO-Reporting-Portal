@@ -1,0 +1,82 @@
+﻿@model SEO_Reporting_Portal.ViewModels.UserDashboardViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Total Reports</span>
+                <span class="info-box-number">@Model.TotalReports</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Upcoming Report</span>
+                <span class="info-box-number">@Model.UpcomingReportDays</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Contract Start Date</span>
+                <span class="info-box-number">@Model.ContractStartDate</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Contract End Date</span>
+                <span class="info-box-number">@Model.ContractEndDate</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+</div>
+
+<div class="row mb-5">
+    <div class="col-7 pl-0">
+        <div class="px-4 py-5 chat-message-box bg-white">
+            <div class="messages-container">
+
+            </div>
+            <div class="message-typing-container">
+                <form class="bg-light" method="post">
+                    <div class="input-group">
+                        <input type="text" id="txt-message" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light messg">
+                        <div class="input-group-append">
+                            <button type="submit" class="send-message-btn btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/userDashboard.js"></script>
+}

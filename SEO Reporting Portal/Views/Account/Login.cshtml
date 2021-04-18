@@ -1,0 +1,46 @@
+﻿@model SEO_Reporting_Portal.ViewModels.LoginViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_LayoutAccount";
+    ViewData["Title"] = "Log in";
+}
+
+<form class="login100-form validate-form" asp-controller="Account" asp-action="Login" id="account" method="post">
+    <span class="login100-form-title p-b-43">
+        Login to continue
+    </span>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <div class="checkbox">
+            <label asp-for="RememberMe">
+                <input asp-for="RememberMe" />
+                @Html.DisplayNameFor(l => l.RememberMe)
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </div>
+    <div class="form-group">
+        <p>
+            <a asp-controller="Account" asp-action="ForgotPassword" id="forgot-password">Forgot your password?</a>
+        </p>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

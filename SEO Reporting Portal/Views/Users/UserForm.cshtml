@@ -1,0 +1,63 @@
+﻿@model SEO_Reporting_Portal.ViewModels.UserFormViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "User";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-3">
+            <div class="card-header">Add New User</div>
+            <div class="card-body">
+                <form asp-controller="Users" asp-action="Create" method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="FullName"></label>
+                        <input asp-for="FullName" class="form-control" />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ContractStartDate"></label>
+                        <input asp-for="ContractStartDate" type="date" class="form-control" />
+                        <span asp-validation-for="ContractStartDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ContractEndDate"></label>
+                        <input asp-for="ContractEndDate" type="date" class="form-control" />
+                        <span asp-validation-for="ContractEndDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-radio">
+                            <input asp-for="Status" type="radio" value="Active" id="status-active" class="custom-control-input" checked="checked">
+                            <label class="custom-control-label" for="status-active">Active</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input asp-for="Status" type="radio" value="Suspended" id="status-suspended" class="custom-control-input">
+                            <label class="custom-control-label" for="status-suspended">Suspend</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input asp-for="Status" type="radio" value="Deleted" id="status-deleted" class="custom-control-input">
+                            <label class="custom-control-label" for="status-deleted">Delete</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+

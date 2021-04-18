@@ -1,0 +1,83 @@
+﻿@model SEO_Reporting_Portal.ViewModels.UploadReportViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Reports";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card bg-light mb-3">
+            <div class="card-header">
+                <span>Reports</span>
+                <div class="float-right">
+                    <a asp-action="Upload" asp-controller="Reports"><i class="fa fa-plus"></i> <span>New Report</span></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <form id='frmTarget' name='dropzone' class='dropzone mb-3' asp-action="Upload" asp-controller="Reports" method="post" enctype="multipart/form-data">
+                    <div class='fallback'>
+                        <input name='files' type='file' />
+                    </div>
+                </form>
+                <form id="abc">
+                    <div class="mb-3 row">
+                        <label asp-for="UserId" class="col-sm-2 col-form-label"></label>
+                        <div class="col-sm-4">
+                            <select asp-for="UserId" asp-items="@(new SelectList(Model.Users,"Id","FullName"))" class="form-control user-select2"></select>
+                        </div>
+                    </div>
+
+                    <a asp-action="Index" class="btn btn-primary"><i class="fas fa-arrow-left mr-2"></i>Back</a>
+                    <button type="button" class="btn btn-secondary" id="button"><i class="far fa-save mr-2"></i> Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('.user-select2').select2();
+        });
+
+        var a = Dropzone.options.frmTarget =
+        {
+            init: function () {
+
+                var myDropzone = this;
+                // Update selector to match your button
+                $("#button").click(function (e) {
+                    e.preventDefault();
+                    myDropzone.processQueue();
+                });
+
+                this.on('sending', function (file, xhr, formData) {
+                    // Append all form inputs to the formData Dropzone will POST
+                    var data = $('#abc').serializeArray();
+                    $.each(data, function (key, el) {
+                        formData.append(el.name, el.value);
+                    });
+                });
+
+                this.on("complete", function (file) {
+                    this.removeAllFiles(true);
+                })
+            },
+            autoProcessQueue: false,
+            clickable: true,
+            maxFilesize: 50,
+            parallelUploads: 5,
+            uploadMultiple: true,
+            addRemoveLinks: true,
+            acceptedFiles: '.png,.jpg,.pdf',
+            dictDefaultMessage: 'Upload your files here',
+            success: function (file, response) {
+                toastr.success('Files uploaded successfully');
+            },
+        };
+    </script>
+}

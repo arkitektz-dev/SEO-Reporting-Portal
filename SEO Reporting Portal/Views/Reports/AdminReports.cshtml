@@ -1,0 +1,73 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Reports";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card bg-light mb-3">
+            <div class="card-header">
+                <span>Reports</span>
+                <div class="float-right">
+                    <a asp-action="Upload" asp-controller="Reports"><i class="fa fa-plus"></i> <span>New Report</span></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-4">
+                        <select class="form-control timeperiod-select2">
+                            <option value="all">All</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table class="table table-hover" id="report-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Format</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(function () {
+            $('.timeperiod-select2').select2();
+            getReports();
+
+            $('.timeperiod-select2').on('select2:select', function (e) {
+                var data = e.params.data;
+                getReportsByTimePeriod(data.id);
+            });
+        });
+
+        async function getReports() {
+            const { data } = await axios.get("/api/reports");
+            const reportsMarkup = data.reports.map(report =>
+                `<tr id=${report.id}><td>${report.name}</td><td>${report.format}</td></tr>`
+            )
+            $('.timeperiod-select2').append(data.timePeriods.map(t => `<option value=${t}>${t}</option>`))
+
+            $('table tbody').append(reportsMarkup.join(''));
+            $('#report-table').DataTable();
+        }
+
+        async function getReportsByTimePeriod(timePeriod) {
+            const { data } = await axios.get(`/api/reports/getReportsByTimePeriod/${timePeriod}`);
+            const reportsMarkup = data.map(report =>
+                `<tr id=${report.id}><td>${report.name}</td><td>${report.format}</td></tr>`
+            )
+            $('table tbody').empty();
+            $('table tbody').append(reportsMarkup.join(''));
+        }
+    </script>
+}

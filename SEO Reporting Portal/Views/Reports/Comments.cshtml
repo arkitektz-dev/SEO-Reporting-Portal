@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="row mb-5">
+    <!-- Users box-->
+    <div class="col-5 pr-0">
+        <div class="bg-white">
+            <div class="bg-gray px-4 py-2 bg-light">
+                <p class="h5 mb-0 py-1">Recent</p>
+            </div>
+
+            <div class="chat-list-container">
+                <div class="list-group rounded-0"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Chat Box-->
+    <div class="col-7 pl-0">
+        <div class="px-4 py-5 chat-message-box bg-white">
+            <div class="messages-container">
+
+            </div>
+            <div class="message-typing-container">
+                <form class="bg-light" method="post">
+                    <div class="input-group">
+                        <input type="text" id="txt-message" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light messg">
+                        <div class="input-group-append">
+                            <button type="submit" class="send-message-btn btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/reportComments.js"></script>
+}

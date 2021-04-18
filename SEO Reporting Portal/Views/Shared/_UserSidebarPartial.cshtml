@@ -1,0 +1,68 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<nav id="sidebar" class="sidebar-wrapper">
+    <!-- sidebar-content  -->
+    <div class="sidebar-content">
+        <div class="sidebar-brand">
+            <a asp-controller="Dashboard" asp-action="Index">
+                SEO Reporting Portal
+            </a>
+            <div id="close-sidebar">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <!-- sidebar-header  -->
+        <div class="sidebar-header">
+            <div class="user-pic">
+                <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+                     alt="User picture">
+            </div>
+            <div class="user-info">
+                <span class="user-name">
+                    @User.Identity.Name
+                </span>
+                <span class="user-role">User</span>
+                <a asp-action="Logout" asp-controller="Account"><span>Logout</span></a>
+            </div>
+        </div>
+        <!-- sidebar-header  -->
+        <!-- sidebar-menu  -->
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a asp-action="Index" asp-controller="Reports"><i class="fa fa-book"></i> <span>Reports</span></a>
+                </li>
+                <li>
+                    <a asp-action="Comments" asp-controller="Reports"><i class="fa fa-book"></i> <span>Report Comments</span></a>
+                </li>
+                <li>
+                    <a asp-action="ChangePassword" asp-controller="Account"><i class="fa fa-book"></i> <span>Change Password</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <!-- sidebar-footer  -->
+    <div class="sidebar-footer">
+        <a href="#">
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-pill badge-warning notification">3</span>
+        </a>
+        <a href="#">
+            <i class="fa fa-envelope"></i>
+            <span class="badge badge-pill badge-success notification">7</span>
+        </a>
+        <a href="#">
+            <i class="fa fa-cog"></i>
+            <span class="badge-sonar"></span>
+        </a>
+        <a href="#">
+            <i class="fa fa-power-off"></i>
+        </a>
+    </div>
+    <!-- sidebar-footer  -->
+</nav>

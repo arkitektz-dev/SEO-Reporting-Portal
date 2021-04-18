@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Reports";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card bg-light mb-3">
+            <div class="card-header">
+                <span>Reports</span>
+                <div class="float-right">
+                    <a asp-action="Upload" asp-controller="Reports"><i class="fa fa-plus"></i> <span>New Report</span></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover" id="report-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Contract Start Date</th>
+                            <th scope="col">Contract End Date </th>
+                            <th scope="col">Email Confirmed</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(function () {
+            getReports();
+        });
+
+        async function getReports() {
+            const response = await axios.get("/api/reports");
+            const reportsMarkup = response.data.map(report =>
+                `<tr id=${report.id}><td>${report.fullName}</td><td>${report.email}</td><td>${report.contractStartDate}</td><td>${report.contractEndDate}</td><td>${report.emailConfirmed}</td><td>${report.status}</td></tr>`
+            )
+
+            $('table tbody').append(reportsMarkup.join(''));
+            $('#report-table').DataTable();
+        }
+    </script>
+}
