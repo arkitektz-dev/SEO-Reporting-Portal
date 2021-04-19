@@ -1,4 +1,9 @@
-﻿@*
+﻿@using Microsoft.AspNetCore.Identity;
+@inject UserManager<User> UserManager
+@{
+    var user = await UserManager.GetUserAsync(User);
+}
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -17,12 +22,12 @@
         <!-- sidebar-header  -->
         <div class="sidebar-header">
             <div class="user-pic">
-                <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+                <img class="img-responsive img-rounded" src="/images/icons/icon-user.png"
                      alt="User picture">
             </div>
             <div class="user-info">
                 <span class="user-name">
-                    @User.Identity.Name
+                    @user.FullName
                 </span>
                 <span class="user-role">User</span>
                 <a asp-action="Logout" asp-controller="Account"><span>Logout</span></a>
@@ -36,7 +41,7 @@
                     <a asp-action="Index" asp-controller="Reports"><i class="fa fa-book"></i> <span>Reports</span></a>
                 </li>
                 <li>
-                    <a asp-action="Comments" asp-controller="Reports"><i class="fa fa-book"></i> <span>Report Comments</span></a>
+                    <a asp-action="Inquiries" asp-controller="Reports"><i class="fa fa-book"></i> <span>Report Inquiries</span></a>
                 </li>
                 <li>
                     <a asp-action="ChangePassword" asp-controller="Account"><i class="fa fa-book"></i> <span>Change Password</span></a>
@@ -47,22 +52,22 @@
     </div>
     <!-- sidebar-content  -->
     <!-- sidebar-footer  -->
-    <div class="sidebar-footer">
-        <a href="#">
-            <i class="fa fa-bell"></i>
-            <span class="badge badge-pill badge-warning notification">3</span>
-        </a>
-        <a href="#">
-            <i class="fa fa-envelope"></i>
-            <span class="badge badge-pill badge-success notification">7</span>
-        </a>
-        <a href="#">
-            <i class="fa fa-cog"></i>
-            <span class="badge-sonar"></span>
-        </a>
-        <a href="#">
-            <i class="fa fa-power-off"></i>
-        </a>
-    </div>
+    @*<div class="sidebar-footer">
+            <a href="#">
+                <i class="fa fa-bell"></i>
+                <span class="badge badge-pill badge-warning notification">3</span>
+            </a>
+            <a href="#">
+                <i class="fa fa-envelope"></i>
+                <span class="badge badge-pill badge-success notification">7</span>
+            </a>
+            <a href="#">
+                <i class="fa fa-cog"></i>
+                <span class="badge-sonar"></span>
+            </a>
+            <a href="#">
+                <i class="fa fa-power-off"></i>
+            </a>
+        </div>*@
     <!-- sidebar-footer  -->
 </nav>

@@ -1,4 +1,4 @@
-﻿::-webkit-scrollbar {
+﻿/*::-webkit-scrollbar {
     width: 5px;
 }
 
@@ -12,7 +12,7 @@
     background-color: #ddd;
     outline: 1px solid slategrey;
     border-radius: 1rem;
-}
+}*/
 
 .text-small {
     font-size: 0.9rem;
@@ -65,11 +65,11 @@ input::placeholder {
 }
 
 .small-box {
-    border-radius: 2px;
-    position: relative;
+    border-radius: .25rem;
+    box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
     display: block;
     margin-bottom: 20px;
-    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    position: relative;
 }
 
     .small-box > .inner {
@@ -81,27 +81,37 @@ input::placeholder {
     }
 
     .small-box h3 {
-        font-size: 38px;
-        font-weight: bold;
+        font-size: 2.2rem;
+        font-weight: 700;
         margin: 0 0 10px 0;
-        white-space: nowrap;
         padding: 0;
+        white-space: nowrap;
+    }
+
+    .small-box p {
+        font-size: 1rem;
     }
 
     .small-box h3, .small-box p {
         z-index: 5;
+        color: white;
     }
 
     .small-box .icon {
-        -webkit-transition: all .3s linear;
-        -o-transition: all .3s linear;
-        transition: all .3s linear;
-        position: absolute;
-        top: -10px;
-        right: 10px;
+        color: rgba(0,0,0,.15);
         z-index: 0;
-        font-size: 90px;
-        color: rgba(0,0,0,0.15);
+    }
+
+        .small-box .icon > i {
+            font-size: 50px;
+            position: absolute;
+            right: 10px;
+            top: 12px;
+            transition: all .3s linear;
+        }
+
+    .small-box:hover .icon > i {
+        font-size: 60px;
     }
 
     .small-box > .small-box-footer {

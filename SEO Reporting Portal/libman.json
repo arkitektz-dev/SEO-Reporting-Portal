@@ -184,6 +184,14 @@
         "build/toastr.min.css",
         "build/toastr.min.js"
       ]
+    },
+    {
+      "library": "sweetalert2@10.16.4",
+      "destination": "wwwroot/lib/sweetalert2/",
+      "files": [
+        "dist/sweetalert2.min.js",
+        "dist/sweetalert2.min.css"
+      ]
     }
   ]
 }

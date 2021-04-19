@@ -11,12 +11,13 @@
             <div class="card-header">
                 <span>Reports</span>
                 <div class="float-right">
-                    <a asp-action="Upload" asp-controller="Reports"><i class="fa fa-plus"></i> <span>New Report</span></a>
+                    <a asp-action="Upload" asp-controller="Reports" class="btn btn-sm btn-secondary"><i class="fa fa-plus"></i> <span>New Report</span></a>
                 </div>
             </div>
             <div class="card-body">
-                <div class="row mb-3">
-                    <div class="col-4">
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <label>Search By Time Period</label>
                         <select class="form-control timeperiod-select2">
                             <option value="all">All</option>
                         </select>
@@ -26,8 +27,12 @@
                 <table class="table table-hover" id="report-table">
                     <thead>
                         <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Format</th>
+                            <th scope="col"></th>
+                            <th scope="col">File</th>
+                            <th scope="col">User</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Created On</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,9 +57,17 @@
 
         async function getReports() {
             const { data } = await axios.get("/api/reports");
-            const reportsMarkup = data.reports.map(report =>
-                `<tr id=${report.id}><td>${report.name}</td><td>${report.format}</td></tr>`
-            )
+            const reportsMarkup = data.reports.map(report => {
+                const path = extractFormatIconPath(report.format);
+                return `<tr id=${report.id}>
+<td><img src=${path}></td>
+<td>${report.name}</td>
+<td>${report.userFullName}</td>
+<td>${report.userEmail}</td>
+<td>${report.createdOn}</td>
+<td><a href="/reports/download/${report.id}" class="small-box-footer">Download</a></td>
+</tr>`});
+
             $('.timeperiod-select2').append(data.timePeriods.map(t => `<option value=${t}>${t}</option>`))
 
             $('table tbody').append(reportsMarkup.join(''));
@@ -63,11 +76,43 @@
 
         async function getReportsByTimePeriod(timePeriod) {
             const { data } = await axios.get(`/api/reports/getReportsByTimePeriod/${timePeriod}`);
-            const reportsMarkup = data.map(report =>
-                `<tr id=${report.id}><td>${report.name}</td><td>${report.format}</td></tr>`
-            )
+            const reportsMarkup = data.map(report => {
+                const path = extractFormatIconPath(report.format);
+                return `<tr id=${report.id}>
+<td><img src=${path}></td>
+<td>${report.name}</td>
+<td>${report.userFullName}</td>
+<td>${report.userEmail}</td>
+<td>${report.createdOn}</td>
+<td><a href="/reports/download/${report.id}" class="small-box-footer">Download</a></td>
+</tr>`});
             $('table tbody').empty();
             $('table tbody').append(reportsMarkup.join(''));
         }
+
+        function extractFormatIconPath(format) {
+            let iconPath = ''
+            switch (format) {
+                case '.jpg':
+                    iconPath = '/images/icons/icon-jpg.png';
+                    break;
+                case '.png':
+                    iconPath = '/images/icons/icon-png.png';
+                    break;
+                case '.pdf':
+                    iconPath = '/images/icons/icon-pdf.png';
+                    break;
+                case '.doc':
+                    iconPath = '/images/icons/icon-word.png';
+                    break;
+                default:
+                    // code block
+                    break;
+            }
+
+            return iconPath;
+        }
+
+
     </script>
 }

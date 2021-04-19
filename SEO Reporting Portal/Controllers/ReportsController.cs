@@ -46,9 +46,16 @@ namespace SEO_Reporting_Portal.Controllers
             }
         }
 
-        public IActionResult Comments()
+        public IActionResult Inquiries()
         {
-            return View();
+            if (User.IsInRole(Roles.Administrator.ToString()))
+            {
+                return View("AdminInquiries");
+            }
+            else
+            {
+                return View("UserInquiries");
+            }
         }
 
         [Authorize(Roles = "Administrator")]
@@ -106,7 +113,7 @@ namespace SEO_Reporting_Portal.Controllers
 
         public async Task<IActionResult> Download(string id)
         {
-            var file = await _context.Reports.SingleOrDefaultAsync(r => r.UniqueName == id);
+            var file = await _context.Reports.SingleOrDefaultAsync(r => r.Id == id);
 
             var path = Path.Combine(
                 _environment.WebRootPath, "Reports", file.UniqueName);

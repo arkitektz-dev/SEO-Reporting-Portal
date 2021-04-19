@@ -41,12 +41,12 @@ namespace SEO_Reporting_Portal.Controllers.Api
 
             if (User.IsInRole(Roles.Administrator.ToString()))
             {
-                reports = await _context.Reports.OrderBy(r => r.CreatedOn).ToListAsync();
+                reports = await _context.Reports.Include("User").OrderBy(r => r.CreatedOn).ToListAsync();
             }
             else
             {
                 var userId = _userManager.GetUserId(User);
-                reports = await _context.Reports.Where(r => r.UserId == userId).OrderBy(r => r.CreatedOn).ToListAsync();
+                reports = await _context.Reports.Where(r => r.UserId == userId).Include("User").OrderBy(r => r.CreatedOn).ToListAsync();
             }
 
             foreach (var report in reports)
@@ -54,10 +54,13 @@ namespace SEO_Reporting_Portal.Controllers.Api
                 var reportDto = new ReportDto
                 {
                     Id = report.Id,
-                    Name = report.Name,
+                    Name = report.NameExcludingExtenstion,
                     UniqueName = report.UniqueName,
                     Path = report.Path,
                     Format = report.Format,
+                    UserFullName = report.User.FullName,
+                    UserEmail = report.User.Email,
+                    CreatedOn = report.CreatedOn.ToString("dd-MMM-yyyy")
                 };
 
                 if (!dto.TimePeriods.Contains(report.CreatedOn.ToString("MMMM-yyyy")))
@@ -78,12 +81,12 @@ namespace SEO_Reporting_Portal.Controllers.Api
             var dto = new List<ReportDto>();
             if (User.IsInRole(Roles.Administrator.ToString()))
             {
-                reports = await _context.Reports.OrderBy(r => r.CreatedOn).ToListAsync();
+                reports = await _context.Reports.Include("User").OrderBy(r => r.CreatedOn).ToListAsync();
             }
             else
             {
                 var userId = _userManager.GetUserId(User);
-                reports = await _context.Reports.Where(r => r.UserId == userId).OrderBy(r => r.CreatedOn).ToListAsync();
+                reports = await _context.Reports.Where(r => r.UserId == userId).Include("User").OrderBy(r => r.CreatedOn).ToListAsync();
             }
 
             foreach (var report in reports)
@@ -94,10 +97,13 @@ namespace SEO_Reporting_Portal.Controllers.Api
                     var reportDto = new ReportDto
                     {
                         Id = report.Id,
-                        Name = report.Name,
+                        Name = report.NameExcludingExtenstion,
                         UniqueName = report.UniqueName,
                         Path = report.Path,
                         Format = report.Format,
+                        UserFullName = report.User.FullName,
+                        UserEmail = report.User.Email,
+                        CreatedOn = report.CreatedOn.ToString("dd-MMM-yyyy")
                     };
 
                     dto.Add(reportDto);
@@ -109,10 +115,13 @@ namespace SEO_Reporting_Portal.Controllers.Api
                         var reportDto = new ReportDto
                         {
                             Id = report.Id,
-                            Name = report.Name,
+                            Name = report.NameExcludingExtenstion,
                             UniqueName = report.UniqueName,
                             Path = report.Path,
                             Format = report.Format,
+                            UserFullName = report.User.FullName,
+                            UserEmail = report.User.Email,
+                            CreatedOn = report.CreatedOn.ToString("dd-MMM-yyyy")
                         };
 
                         dto.Add(reportDto);
@@ -136,19 +145,18 @@ namespace SEO_Reporting_Portal.Controllers.Api
             return File(bytes, "application/octet-stream", file.Name);
         }
 
-        [HttpGet("GetComments")]
-        public async Task<ActionResult<IEnumerable<ReportCommentDto>>> GetComments()
+        [HttpGet("GetInquiries")]
+        public async Task<ActionResult<IEnumerable<ReportCommentDto>>> GetInquiries()
         {
             List<Report> reports = new List<Report>();
             var dto = new List<ReportCommentDto>();
             if (User.IsInRole(Roles.Administrator.ToString()))
             {
-                reports = await _context.Reports.ToListAsync();
-
+                reports = await _context.Reports.Include("User").ToListAsync();
             }
             else if (User.IsInRole(Roles.User.ToString()))
             {
-                reports = await _context.Reports.Where(r => r.UserId == _userManager.GetUserId(User)).ToListAsync();
+                reports = await _context.Reports.Where(r => r.UserId == _userManager.GetUserId(User)).Include("User").ToListAsync();
             }
 
             foreach (var report in reports)
@@ -158,7 +166,9 @@ namespace SEO_Reporting_Portal.Controllers.Api
                 {
                     Id = report.Id,
                     Name = report.Name,
-                    Format = report.Format
+                    Format = report.Format,
+                    UserFullName = report.User.FullName,
+                    UserEmail = report.User.Email
                 };
                 if (comments.Count > 0)
                 {
@@ -198,8 +208,8 @@ namespace SEO_Reporting_Portal.Controllers.Api
             return dto;
         }
 
-        [HttpGet("GetComment/{id}")]
-        public async Task<ActionResult<CommentDto>> GetComment(string id)
+        [HttpGet("GetInquiry/{id}")]
+        public async Task<ActionResult<CommentDto>> GetInquiry(string id)
         {
             var comment = await _context.ReportComments.FindAsync(id);
 
@@ -221,8 +231,8 @@ namespace SEO_Reporting_Portal.Controllers.Api
             return commentDto;
         }
 
-        [HttpGet("GetCommentsByReportId/{reportId?}")]
-        public async Task<ActionResult<IEnumerable<CommentDto>>> GetCommentsByReportId(string reportId)
+        [HttpGet("GetInquiriesByReportId/{reportId?}")]
+        public async Task<ActionResult<IEnumerable<CommentDto>>> GetInquiriesByReportId(string reportId)
         {
             //if (reportId == null && User.IsInRole(Roles.User.ToString()))
             //{
@@ -253,11 +263,18 @@ namespace SEO_Reporting_Portal.Controllers.Api
             return dto;
         }
 
-        [HttpPost("Comment")]
-        public async Task<ActionResult<CommentDto>> PostComment(CommentCreateDto commentCreateDto)
+        [HttpPost("Inquiry")]
+        public async Task<ActionResult<CommentDto>> PostInquiry(CommentCreateDto commentCreateDto)
         {
             try
             {
+                var report = await _context.Reports.SingleOrDefaultAsync(r => r.Id == commentCreateDto.ReportId);
+
+                if (report == null)
+                {
+                    return NotFound("Unable to load report");
+                }
+
                 var comment = new ReportComment
                 {
                     Id = Guid.NewGuid().ToString(),
@@ -266,16 +283,15 @@ namespace SEO_Reporting_Portal.Controllers.Api
                 var userId = _userManager.GetUserId(User);
                 if (User.IsInRole(Roles.Administrator.ToString()))
                 {
-                    var report = await _context.Reports.SingleOrDefaultAsync(r => r.Id == commentCreateDto.ReportId);
                     comment.RespondentId = userId;
                     comment.UserId = report.UserId;
-                    comment.ReportId = commentCreateDto.ReportId;
                 }
                 else if (User.IsInRole(Roles.User.ToString()))
                 {
                     comment.UserId = userId;
                 }
 
+                comment.ReportId = commentCreateDto.ReportId;
                 _context.ReportComments.Add(comment);
 
                 await _context.SaveChangesAsync();
@@ -291,7 +307,7 @@ namespace SEO_Reporting_Portal.Controllers.Api
                     SentTime = comment.CreatedOn.ToString("hh:mm tt"),
                 };
 
-                return CreatedAtAction(nameof(GetComment), new { id = commentDto.Id }, commentDto);
+                return CreatedAtAction(nameof(GetInquiry), new { id = commentDto.Id }, commentDto);
             }
             catch (Exception ex)
             {

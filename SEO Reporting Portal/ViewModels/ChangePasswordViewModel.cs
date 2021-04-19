@@ -8,6 +8,8 @@ namespace SEO_Reporting_Portal.ViewModels
 {
     public class ChangePasswordViewModel
     {
+        public string StatusMessage { get; set; }
+
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Current password")]

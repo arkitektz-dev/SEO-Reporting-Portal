@@ -66,8 +66,8 @@ namespace SEO_Reporting_Portal.Controllers
                         var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                         code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                         var callbackUrl = Url.Action("SetPassword", "Account", values: new { userId = user.Id, code }, Request.Scheme);
-                        _ = _emailSender.SendEmailAsync(model.Email, "Confirm your email",
-                       $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                        // _ = _emailSender.SendEmailAsync(model.Email, "Confirm your email",
+                        //$"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                         return RedirectToAction("Index", "Users");
                     }

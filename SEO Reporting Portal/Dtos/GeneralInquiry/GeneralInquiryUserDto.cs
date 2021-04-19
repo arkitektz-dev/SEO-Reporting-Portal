@@ -8,6 +8,8 @@ namespace SEO_Reporting_Portal.Dtos.GeneralInquiry
 
         public string FullName { get; set; }
 
+        public string Email { get; set; }
+
         public GeneralInquiryDto RecentMessage { get; set; }
 
         public List<GeneralInquiryDto> Messages { get; set; }

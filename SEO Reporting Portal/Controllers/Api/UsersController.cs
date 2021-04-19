@@ -42,8 +42,8 @@ namespace SEO_Reporting_Portal.Controllers.Api
                     FullName = user.FullName,
                     Email = user.Email,
                     EmailConfirmed = user.EmailConfirmed,
-                    ContractStartDate = user.ContractStartDate.Value,
-                    ContractEndDate = user.ContractEndDate.Value,
+                    ContractStartDate = user.ContractStartDate.Value.ToString("dd-MMM-yyyy"),
+                    ContractEndDate = user.ContractEndDate.Value.ToString("dd-MMM-yyyy"),
                     Status = user.Status.ToString()
                 };
 

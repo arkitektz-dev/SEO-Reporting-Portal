@@ -10,10 +10,7 @@
     <div class="col-12">
         <div class="card bg-light mb-3">
             <div class="card-header">
-                <span>Reports</span>
-                <div class="float-right">
-                    <a asp-action="Upload" asp-controller="Reports"><i class="fa fa-plus"></i> <span>New Report</span></a>
-                </div>
+                <span>Upload Report</span>
             </div>
             <div class="card-body">
                 <form id='frmTarget' name='dropzone' class='dropzone mb-3' asp-action="Upload" asp-controller="Reports" method="post" enctype="multipart/form-data">
@@ -29,8 +26,9 @@
                         </div>
                     </div>
 
-                    <a asp-action="Index" class="btn btn-primary"><i class="fas fa-arrow-left mr-2"></i>Back</a>
-                    <button type="button" class="btn btn-secondary" id="button"><i class="far fa-save mr-2"></i> Save</button>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" id="button">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>

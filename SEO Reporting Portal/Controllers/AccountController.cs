@@ -112,6 +112,7 @@ namespace SEO_Reporting_Portal.Controllers
             return View();
         }
 
+        [HttpPost]
         public async Task<IActionResult> SetPassword(SetPasswordViewModel model)
         {
             if (!ModelState.IsValid)
@@ -135,26 +136,27 @@ namespace SEO_Reporting_Portal.Controllers
                     }
                     return View(model);
                 }
+
+                _code = null;
+                _userId = null;
+                return RedirectToAction("Login", "Account");
             }
 
-            return RedirectToAction("Login", "Account");
+            ModelState.AddModelError(string.Empty, "Some Error Occured");
+            return View(model);
         }
 
         public async Task<IActionResult> ChangePassword()
         {
+            var viewModel = new ChangePasswordViewModel();
+
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
 
-            var hasPassword = await _userManager.HasPasswordAsync(user);
-            if (!hasPassword)
-            {
-                return RedirectToAction("SetPassword");
-            }
-
-            return View();
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -162,7 +164,7 @@ namespace SEO_Reporting_Portal.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(model);
             }
 
             var user = await _userManager.GetUserAsync(User);
@@ -181,10 +183,14 @@ namespace SEO_Reporting_Portal.Controllers
                 return View("ChangePassword", model);
             }
 
-            await _signInManager.SignOutAsync();
+            await _signInManager.RefreshSignInAsync(user);
             _logger.LogInformation("User changed their password successfully.");
 
-            return RedirectToAction("Login");
+            var viewModel = new ChangePasswordViewModel()
+            {
+                StatusMessage = "Your password has been changed."
+            };
+            return View(viewModel);
         }
 
         public IActionResult ForgotPassword()
@@ -199,7 +205,6 @@ namespace SEO_Reporting_Portal.Controllers
         {
             if (ModelState.IsValid)
             {
-                var viewModel = new ForgotPasswordViewModel();
                 var user = await _userManager.FindByEmailAsync(model.Email);
                 if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
                 {
@@ -216,14 +221,18 @@ namespace SEO_Reporting_Portal.Controllers
 
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-                var callbackUrl = Url.Action("ResetPassword", "Account", values: new { code }, Request.Scheme);
+                var callbackUrl = Url.Action("ResetPassword", "Account", values: new { userId = user.Id, code }, Request.Scheme);
 
                 _ = _emailSender.SendEmailAsync(model.Email, "Reset Password",
                  $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
-                model.StatusMessage = "Reset Link is send to your email";
+                ModelState.Clear();
+                var viewModel = new ForgotPasswordViewModel()
+                {
+                    StatusMessage = "Password reset link is send to your email",
+                };
 
-                return View(model);
+                return View(viewModel);
             }
 
             model.StatusMessage = "Some Error Occured";
@@ -231,19 +240,26 @@ namespace SEO_Reporting_Portal.Controllers
             return View(model);
         }
 
-        public IActionResult ResetPassword(string code = null)
+        public async Task<IActionResult> ResetPassword(string userId = null, string code = null)
         {
             var viewModel = new ResetPasswordViewModel();
 
-            if (code == null)
+            if (userId == null || code == null)
             {
-                return BadRequest("A code must be supplied for password reset.");
+                return BadRequest("A code must be supplied to set password.");
             }
-            else
+
+            var user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null)
             {
-                _code = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(code));
-                return View("ResetPassword", viewModel);
+                return NotFound($"Unable to load user with ID '{userId}'.");
             }
+
+            _code = code;
+            _userId = userId;
+
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -254,7 +270,9 @@ namespace SEO_Reporting_Portal.Controllers
                 return View(model);
             }
 
-            var user = await _userManager.FindByEmailAsync(model.Email);
+            var user = await _userManager.FindByIdAsync(_userId);
+            var code = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(_code));
+
             if (user == null)
             {
                 // Don't reveal that the user does not exist
@@ -263,10 +281,11 @@ namespace SEO_Reporting_Portal.Controllers
                 return View(model);
             }
 
-            var result = await _userManager.ResetPasswordAsync(user, _code, model.Password);
+            var result = await _userManager.ResetPasswordAsync(user, code, model.Password);
             if (result.Succeeded)
             {
                 _code = null;
+                _userId = null;
                 return RedirectToAction("Login", "Account");
             }
 

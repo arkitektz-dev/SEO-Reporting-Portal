@@ -315,8 +315,6 @@ D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Raz
 D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\AdminReports.cshtml.g.cs
-D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\Comments.cshtml.g.cs
-D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\Index.cshtml.g.cs
 D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\UploadForm.cshtml.g.cs
 D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\UserReports.cshtml.g.cs
 D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
@@ -337,3 +335,5 @@ D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO
 D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\ref\SEO Reporting Portal.dll
 D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.pdb
 D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.genruntimeconfig.cache
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\AdminInquiries.cshtml.g.cs
+D:\New folder (5)\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Reports\UserInquiries.cshtml.g.cs

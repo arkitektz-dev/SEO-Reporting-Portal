@@ -40,7 +40,8 @@ namespace SEO_Reporting_Portal.Controllers.Api
                 var userDto = new GeneralInquiryUserDto
                 {
                     Id = user.Id,
-                    FullName = user.FullName
+                    FullName = user.FullName,
+                    Email = user.Email
                 };
                 if (generalInquiries.Count > 0)
                 {

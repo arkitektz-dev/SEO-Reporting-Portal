@@ -13,6 +13,10 @@ namespace SEO_Reporting_Portal.Dtos.Report
 
         public string Format { get; set; }
 
+        public string UserFullName { get; set; }
+
+        public string UserEmail { get; set; }
+
         public CommentDto RecentComment { get; set; }
 
         public List<CommentDto> Comments { get; set; }

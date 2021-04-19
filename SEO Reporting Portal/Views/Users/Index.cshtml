@@ -12,7 +12,7 @@
             <div class="card-header">
                 <span>Users</span>
                 <div class="float-right">
-                    <a asp-action="Create" asp-controller="Users"><i class="fa fa-plus"></i> <span>New User</span></a>
+                    <a asp-action="Create" asp-controller="Users" class="btn btn-sm btn-secondary"><i class="fa fa-plus"></i> <span>New User</span></a>
                 </div>
             </div>
             <div class="card-body">
@@ -41,12 +41,18 @@
             getUsers();
             $('.table tbody').on('change', '.dd-user-status', async function () {
                 const userId = $(this).parents('tr').attr('id');
-                const selectedStatus = $(this).find(":selected").val()
-                const { data, status } = await axios.put(`/api/users/updateUserStatus/${userId}`, { status: selectedStatus });
-                if (status === 200)
-                    toastr.success('Successfully updated');
-                else
-                    toastr.success('Some Error Occured');
+                const selectedStatus = $(this).find(":selected").val();
+                Swal.fire({
+                    title: 'Are you sure?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: 'No',
+                    confirmButtonText: 'Yes'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        changeUserStatus(userId, selectedStatus);
+                    }
+                });
             });
         });
 
@@ -58,6 +64,15 @@
 
             $('table tbody').append(usersMarkup.join(''));
             $('#user-table').DataTable();
+        }
+
+        async function changeUserStatus(userId, accountStatus) {
+            const { data, status } = await axios.put(`/api/users/updateUserStatus/${userId}`, { status: accountStatus });
+
+            if (status === 200)
+                toastr.success('Successfully updated');
+            else
+                toastr.success('Some Error Occured');
         }
 
     </script>

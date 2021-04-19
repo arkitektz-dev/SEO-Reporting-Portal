@@ -58,8 +58,14 @@ body {
     font-weight: bold;
 }
 
-.card-header a{
-    color: #fff;
+
+
+    .card-header a {
+        color: #fff;
+    }
+
+.color-red {
+    color: red
 }
 
 .page-wrapper .sidebar-wrapper,
@@ -106,7 +112,13 @@ body {
 
 @media screen and (min-width: 768px) {
     .page-wrapper.toggled .page-content {
-        padding-left: 300px;
+        padding-left: 260px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar-wrapper {
+        left: -260px !important;
     }
 }
 /*----------------show sidebar button----------------*/
@@ -518,7 +530,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: #3a3f48;
+    background: #31353D;
     display: flex;
     padding: 1px;
     z-index: 5;

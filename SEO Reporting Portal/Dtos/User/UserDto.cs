@@ -16,9 +16,9 @@ namespace SEO_Reporting_Portal.Dtos.User
 
         public bool EmailConfirmed { get; set; }
 
-        public DateTime ContractStartDate { get; set; }
+        public string ContractStartDate { get; set; }
 
-        public DateTime ContractEndDate { get; set; }
+        public string ContractEndDate { get; set; }
 
         public string Status { get; set; }
     }

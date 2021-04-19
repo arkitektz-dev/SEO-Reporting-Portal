@@ -10,20 +10,25 @@
         <div class="card bg-light mb-3">
             <div class="card-header">
                 <span>Reports</span>
-                <div class="float-right">
-                    <a asp-action="Upload" asp-controller="Reports"><i class="fa fa-plus"></i> <span>New Report</span></a>
-                </div>
             </div>
             <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-4">
+                        <select class="form-control timeperiod-select2">
+                            <option value="all">All</option>
+                        </select>
+                    </div>
+                </div>
+
                 <table class="table table-hover" id="report-table">
                     <thead>
                         <tr>
-                            <th scope="col">Name</th>
+                            <th scope="col"></th>
+                            <th scope="col">File</th>
+                            <th scope="col">User</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Contract Start Date</th>
-                            <th scope="col">Contract End Date </th>
-                            <th scope="col">Email Confirmed</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">Created On</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,17 +42,71 @@
 @section scripts {
     <script>
         $(function () {
+            $('.timeperiod-select2').select2();
             getReports();
+
+            $('.timeperiod-select2').on('select2:select', function (e) {
+                var data = e.params.data;
+                getReportsByTimePeriod(data.id);
+            });
         });
 
         async function getReports() {
-            const response = await axios.get("/api/reports");
-            const reportsMarkup = response.data.map(report =>
-                `<tr id=${report.id}><td>${report.fullName}</td><td>${report.email}</td><td>${report.contractStartDate}</td><td>${report.contractEndDate}</td><td>${report.emailConfirmed}</td><td>${report.status}</td></tr>`
-            )
+            const { data } = await axios.get("/api/reports");
+            const reportsMarkup = data.reports.map(report => {
+                const path = extractFormatIconPath(report.format);
+                return `<tr id=${report.id}>
+<td><img src=${path}></td>
+<td>${report.name}</td>
+<td>${report.userFullName}</td>
+<td>${report.userEmail}</td>
+<td>${report.createdOn}</td>
+<td><a href="/reports/download/${report.id}" class="small-box-footer">Download</a></td>
+</tr>`});
+
+            $('.timeperiod-select2').append(data.timePeriods.map(t => `<option value=${t}>${t}</option>`))
 
             $('table tbody').append(reportsMarkup.join(''));
             $('#report-table').DataTable();
         }
+        async function getReportsByTimePeriod(timePeriod) {
+            const { data } = await axios.get(`/api/reports/getReportsByTimePeriod/${timePeriod}`);
+            const reportsMarkup = data.map(report => {
+                const path = extractFormatIconPath(report.format);
+                return `<tr id=${report.id}>
+<td><img src=${path}></td>
+<td>${report.name}</td>
+<td>${report.userFullName}</td>
+<td>${report.userEmail}</td>
+<td>${report.createdOn}</td>
+<td><a href="/reports/download/${report.id}" class="small-box-footer">Download</a></td>
+</tr>`});
+            $('table tbody').empty();
+            $('table tbody').append(reportsMarkup.join(''));
+        }
+
+        function extractFormatIconPath(format) {
+            let iconPath = ''
+            switch (format) {
+                case '.jpg':
+                    iconPath = '/images/icons/icon-jpg.png';
+                    break;
+                case '.png':
+                    iconPath = '/images/icons/icon-png.png';
+                    break;
+                case '.pdf':
+                    iconPath = '/images/icons/icon-pdf.png';
+                    break;
+                case '.doc':
+                    iconPath = '/images/icons/icon-word.png';
+                    break;
+                default:
+                    // code block
+                    break;
+            }
+
+            return iconPath;
+        }
+
     </script>
 }
