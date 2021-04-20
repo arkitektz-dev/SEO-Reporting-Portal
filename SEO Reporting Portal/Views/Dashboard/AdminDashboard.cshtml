@@ -6,8 +6,8 @@
     ViewData["Title"] = "Dashboard";
 }
 
-<div class="row">
 
+<div class="row">
     <div class="col-lg-3 col-xs-6">
         <div class="small-box bg-aqua">
             <div class="inner">
@@ -62,41 +62,92 @@
             <a asp-action="Inquiries" asp-controller="Reports" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
-
-
-
 </div>
+
+<div id="general-inquiry-container">
+
+    <div class="row gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="chat-card m-0">
+                <!-- Row start -->
+                <div class="row no-gutters">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3" style="border-right: 1px solid #78c2ad;">
+                        <div class="inbox-header">
+                            <h5>General Inquiries</h5>
+                        </div>
+                        <div class="inbox-users-container">
+                            @*<div class="chat-search-box">
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="Search">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-info">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>*@
+                            <ul class="inbox-users">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-9 col-9">
+                        <div class="chat-container">
+                            <ul class="chat-list chatContainerScroll">
+                            </ul>
+
+                            <form class="bg-light send-msg-form" method="post">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" id="txt-message" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light messg">
+                                        <div class="input-group-append">
+                                            <button type="submit" class="send-message-btn btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 <div class="row mb-5" id="general-inquiry-container">
     <!-- Users box-->
-    <div class="col-md-5 col-12 pr-0">
-        <div class="bg-white">
-            <div class="bg-gray px-4 py-2 bg-light">
-                <p class="h5 mb-0 py-1">General Inquiries</p>
-            </div>
+    @*<div class="col-md-5 col-12">
+            <div class="bg-white">
+                <div class="bg-gray px-4 py-2 bg-light">
+                    <p class="h5 mb-0 py-1">General Inquiries</p>
+                </div>
 
-            <div class="chat-list-container">
+                <div class="chat-list-container">
+                </div>
             </div>
-        </div>
-    </div>
+        </div>*@
     <!-- Chat Box-->
-    <div class="col-md-7 col-12 pl-0">
-        <div class="px-4 py-5 chat-message-box bg-white">
-            <div class="messages-container">
+    @*<div class="col-md-7 col-12 pl-0">
+            <div class="px-4 py-5 chat-message-box bg-white">
+                <div class="messages-container">
 
-            </div>
-            <div class="message-typing-container">
-                <form class="bg-light" method="post">
-                    <div class="input-group">
-                        <input type="text" id="txt-message" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light messg">
-                        <div class="input-group-append">
-                            <button type="submit" class="send-message-btn btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                </div>
+                <div class="message-typing-container">
+                    <form class="bg-light" method="post">
+                        <div class="input-group">
+                            <input type="text" id="txt-message" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light messg">
+                            <div class="input-group-append">
+                                <button type="submit" class="send-message-btn btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
-    </div>
+        </div>*@
 </div>
 
 @section scripts {

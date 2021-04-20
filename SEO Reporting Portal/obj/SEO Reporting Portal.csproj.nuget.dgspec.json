@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\New folder (5)\\SEO-Reporting-Portal\\SEO Reporting Portal\\SEO Reporting Portal.csproj": {}
+    "G:\\SEO-Reporting-Portal\\SEO Reporting Portal\\SEO Reporting Portal.csproj": {}
   },
   "projects": {
-    "D:\\New folder (5)\\SEO-Reporting-Portal\\SEO Reporting Portal\\SEO Reporting Portal.csproj": {
+    "G:\\SEO-Reporting-Portal\\SEO Reporting Portal\\SEO Reporting Portal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\New folder (5)\\SEO-Reporting-Portal\\SEO Reporting Portal\\SEO Reporting Portal.csproj",
+        "projectUniqueName": "G:\\SEO-Reporting-Portal\\SEO Reporting Portal\\SEO Reporting Portal.csproj",
         "projectName": "SEO Reporting Portal",
-        "projectPath": "D:\\New folder (5)\\SEO-Reporting-Portal\\SEO Reporting Portal\\SEO Reporting Portal.csproj",
-        "packagesPath": "C:\\Users\\Shahzer\\.nuget\\packages\\",
-        "outputPath": "D:\\New folder (5)\\SEO-Reporting-Portal\\SEO Reporting Portal\\obj\\",
+        "projectPath": "G:\\SEO-Reporting-Portal\\SEO Reporting Portal\\SEO Reporting Portal.csproj",
+        "packagesPath": "C:\\Users\\sk\\.nuget\\packages\\",
+        "outputPath": "G:\\SEO-Reporting-Portal\\SEO Reporting Portal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Shahzer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\localsysnuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -85,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

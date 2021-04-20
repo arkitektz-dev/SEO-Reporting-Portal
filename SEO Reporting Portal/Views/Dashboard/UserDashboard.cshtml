@@ -57,28 +57,31 @@
     </div>
 </div>
 
-<div class="row mb-5">
-    <div class="col-md-7 col-12">
-        <div class="chat-message-box bg-white">
-            <div class="bg-gray px-4 py-2 bg-light">
-                <p class="h5 mb-0 py-1">General Inquiries</p>
-            </div>
-            <div class="messages-container py-2">
 
-            </div>
-            <div class="message-typing-container">
-                <form class="bg-light" method="post">
-                    <div class="input-group">
-                        <input type="text" id="txt-message" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light messg">
-                        <div class="input-group-append">
-                            <button type="submit" class="send-message-btn btn btn-link"><i class="fa fa-paper-plane"></i></button>
+<div class="row no-gutters mb-4">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="chat-card m-0">
+            <!-- Row start -->
+            <div class="chat-container">
+                <ul class="chat-list chatContainerScroll">
+                </ul>
+
+                <form class="bg-light send-msg-form" method="post">
+                    <div class="form-group m-0">
+                        <div class="input-group">
+                            <input type="text" id="txt-message" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light messg">
+                            <div class="input-group-append">
+                                <button type="submit" class="send-message-btn btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                            </div>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <!-- Row end -->
 </div>
+
 
 @section scripts {
     <script src="~/js/userDashboard.js"></script>
