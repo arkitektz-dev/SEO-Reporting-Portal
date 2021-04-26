@@ -412,3 +412,4 @@ G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Port
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\ref\SEO Reporting Portal.dll
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.pdb
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\SEO Reporting Portal.genruntimeconfig.cache
+G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Debug\net5.0\Razor\Views\Users\SetPassword.cshtml.g.cs

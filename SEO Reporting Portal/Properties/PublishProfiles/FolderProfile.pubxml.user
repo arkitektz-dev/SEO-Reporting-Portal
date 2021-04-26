@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\wwwroot\seo</_PublishTargetUrl>
+    <History>True|2021-04-21T07:27:15.3871139Z;False|2021-04-21T12:26:46.1189258+05:00;True|2021-04-21T12:22:02.8971193+05:00;True|2021-04-21T10:59:08.4982795+05:00;</History>
+  </PropertyGroup>
+</Project>

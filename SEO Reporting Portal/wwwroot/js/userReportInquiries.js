@@ -1,4 +1,5 @@
-﻿$(function () {
+﻿const API_Endpoint = '/api/reports';
+$(function () {
     connection.on("ReceiveReportComment", function (commentDto) {
         var focusedReportId = $('.chat-list-container').find('.active').attr('id');
         if (focusedReportId == commentDto.reportId) {
@@ -24,7 +25,7 @@
         const text = $('#txt-message').val();
         var reportId = $('.chat-list-container').find('.active').attr('id');
         if (text.length > 0) {
-            const { data } = await axios.post("/api/reports/inquiry", { text, reportId });
+            const { data } = await axios.post(`${API_Endpoint}/inquiry`, { text, reportId });
             $('#txt-message').val('');
             connection.invoke("SendReportComment", reportId, data).catch(function (err) {
                 return console.error(err.toString());
@@ -36,7 +37,7 @@
 });
 
 async function getInquiriesByReport() {
-    const { data } = await axios.get("/api/reports/getInquiries");
+    const { data } = await axios.get(`${API_Endpoint}/getInquiries`);
     if (data.length > 0) {
         const inboxMarkup = makeInboxMarkup(data);
         $('.chat-list-container').append(inboxMarkup);
@@ -107,7 +108,7 @@ async function getInquiriesByReportId() {
     $(this).removeClass('list-group-item-light');
     $(this).addClass('active text-white');
 
-    const { data } = await axios.get(`/api/reports/getInquiriesByReportId/${reportId}`);
+    const { data } = await axios.get(`${API_Endpoint}/getInquiriesByReportId/${reportId}`);
     console.log(data);
     let messagesMarkup;
     $('.messages-container').empty();

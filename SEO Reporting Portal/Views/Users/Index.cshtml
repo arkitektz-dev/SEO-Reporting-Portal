@@ -25,6 +25,7 @@
                             <th scope="col">Contract End Date </th>
                             <th scope="col">Email Confirmed</th>
                             <th scope="col">Status</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,14 +57,28 @@
             });
         });
 
+        $('.table tbody').on('click', '.btn-resend-email', async function () {
+            const userId = $(this).parents('tr').attr('id');
+            resendEmailConfirmation(userId);
+        });
+
         async function getUsers() {
             const response = await axios.get("/api/users");
+            console.log(response.data)
             const usersMarkup = response.data.map(user =>
-                `<tr id=${user.id}><td>${user.fullName}</td><td>${user.email}</td><td>${user.contractStartDate}</td><td>${user.contractEndDate}</td><td>${user.emailConfirmed}</td><td><select class="dd-user-status"><option value="Active" ${user.status === 'Active' ? 'selected' : ''}>Active</option><option value="Suspended" ${user.status === 'Suspended' ? 'selected' : ''}>Suspend</option><option value="Deleted" ${user.status === 'Deleted' ? 'selected' : ''}>Delete</option></select></td></tr>`
+                `<tr id=${user.id}><td>${user.fullName}</td><td>${user.email}</td><td>${user.contractStartDate}</td><td>${user.contractEndDate}</td><td>${user.emailConfirmed}</td><td><select class="dd-user-status"><option value="Active" ${user.status === 'Active' ? 'selected' : ''}>Active</option><option value="Suspended" ${user.status === 'Suspended' ? 'selected' : ''}>Suspend</option><option value="Deleted" ${user.status === 'Deleted' ? 'selected' : ''}>Delete</option></select></td><td>${!user.emailConfirmed ? `<button class="btn btn-link btn-resend-email">Resend Email</button><a class="btn btn-link" href="/users/setPassword/${user.id}">Activate</button>` : ''}</td></tr>`
             )
 
             $('table tbody').append(usersMarkup.join(''));
             $('#user-table').DataTable();
+        }
+
+        async function resendEmailConfirmation(userId) {
+            const { data, status } = await axios.post(`/api/users/resendEmailConfirmation`, { userId });
+            if (status === 200)
+                toastr.success('Email send successfully');
+            else
+                toastr.success('Some Error Occured');
         }
 
         async function changeUserStatus(userId, accountStatus) {

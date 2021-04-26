@@ -1,9 +1,11 @@
-﻿$(function () {
+﻿const API_Endpoint = '/api/generalInquiries';
+$(function () {
+
     connection.on("ReceiveMessage", function (generalInquiryDto) {
-        var focusedUserId = $('.person.active-user').attr('id');
+        var focusedUserId = $('.contact.active-user').attr('id');
         if (focusedUserId == generalInquiryDto.userId) {
             const messagesMarkup = makeMessagesMarkup([generalInquiryDto]);
-            $('.no-message-container').remove();
+            //$('.no-message-container').remove();
             $('.chat-list').append(messagesMarkup);
         }
         changeRecentMessage({
@@ -21,10 +23,11 @@
     $("form").submit(async function (e) {
         e.preventDefault();
         const message = $('#txt-message').val();
-        var userId = $('.person.active-user').attr('id');
+        var userId = $('.contact.active-user').attr('id');
         if (message.length > 0) {
-            const { data } = await axios.post("/api/generalInquiries", { message, userId });
+            const { data } = await axios.post(API_Endpoint, { message, userId });
             $('#txt-message').val('');
+            $(".messages").animate({ scrollTop: $('.messages').prop("scrollHeight") }, 1000);
             connection.invoke("SendMessage", userId, data).catch(function (err) {
                 return console.error(err.toString());
             });
@@ -35,7 +38,7 @@
 });
 
 async function getGeneralInquiries() {
-    const { data } = await axios.get("/api/generalInquiries");
+    const { data } = await axios.get(API_Endpoint);
     if (data.length > 0) {
         const inboxMarkup = makeInboxMarkup(data);
         $('.inbox-users').append(inboxMarkup);
@@ -53,57 +56,38 @@ function makeInboxMarkup(users) {
             message: user.recentMessage !== null ? user.recentMessage.message : '',
         };
 
-        return `<li class="person ${activeClass}" id=${user.id}>
-            <div class="chat_people">
-                <div class="chat_img"> 
-                    <span class="user-avatar ">${user.fullName[0]}</span>
-                </div>
-                <div class="chat_ib">
-                    <h5 class="user-name">${user.fullName} 
-                        <span class="chat_date">${recentMessage.sentDate ? recentMessage.sentDate : ''}</span>
-                    </h5>
-                    <p class="user-email">${user.email}</p>
-                    <p class="recent-message-text">${recentMessage.message}</p>
-                </div>
-            </div>
+        return `<li class="contact ${activeClass}" id=${user.id}>
+                   <div class="wrap">
+                        <div class="avatar-container">
+                            <span class="user-avatar ">${user.fullName[0]}</span>
+                        </div>
+                        <div class="meta">
+                           <p class="name user-name">${user.fullName}</p>
+                           <p class="user-email">${user.email}</p>
+                           <p class="preview recent-message-text">${recentMessage.message}</p>
+                        </div>
+                   </div>
         </li>`;
     });
 }
 
 function makeMessagesMarkup(messages) {
-    var userName = $('.person.active-user .user-name').text();
+    var userName = $('.contact.active-user .user-name').text();
+
+    $('.user-profile').html(`<span class="user-profile-avatar">${userName[0]}</span><p>${userName}</p>`);
 
     if (messages.length > 0) {
         return messages.map((message) => {
-            if (message.respondentId !== null) {
-                return `<li class="chat-right">
-                      <div class="chat-hour">${message.sentTime}</div>
-                      <div class="chat-text">${message.message}</div>
-                      <div class="chat-avatar">
-                        <span class="user-avatar">Y</span>
-                          <div class="chat-name">You</div>
-                      </div>
-                </li>`;
-            } else {
-                return `<li class="chat-left">
-                    <div class="chat-avatar">
-                        <span class="user-avatar">${userName[0]}</span>
-                        <div class="chat-name">${userName}</div>
-                    </div>
-                    <div class="chat-text">${message.message}</div>
-                    <div class="chat-hour">${message.sentTime}</div>
-                </li>`;
-            }
+            const positionClass = message.respondentId !== null ? 'sent' : 'replies';
+            const avatarKeyword = message.respondentId !== null ? 'Y' : userName[0];
+            return `<li class="${positionClass}">
+                       <span class="user-chat-avatar">${avatarKeyword}</span>
+                       <p class="chat-message">${message.message}</p>
+                       <div class="chat-time"><p>${message.sentTime} | ${message.sentDate}</p></div>
+            </li>`;
         }).join('');
     }
-    else {
-        var userEmail = $('.person.active-user .user-email').text();
-        return `<div style = "text-align:center"; class="no-message-container">
-                <span class="user-avatar">${userName[0]}</span>
-                <h6 class="mt-2">${userName}<h6>
-                <h6 class="mt-2">${userEmail}<h6>
-        </div>`;
-    }
+
 }
 
 function changeRecentMessage(message) {
@@ -113,10 +97,10 @@ function changeRecentMessage(message) {
 
 async function getGeneralInquiriesByUserId() {
     var userId = $(this).attr('id');
-    $(".person").removeClass("active-user");
+    $(".contact").removeClass("active-user");
     $(this).addClass('active-user');
 
-    const { data } = await axios.get(`/api/generalInquiries/getGeneralInquiriesByUserId/${userId}`);
+    const { data } = await axios.get(`${API_Endpoint}/getGeneralInquiriesByUserId/${userId}`);
     let messagesMarkup;
     $('.chat-list').empty();
     messagesMarkup = makeMessagesMarkup(data);

@@ -103,7 +103,7 @@ namespace SEO_Reporting_Portal.Controllers
 
             if (hasPassword)
             {
-                return NotFound($"Unable to load user with ID '{userId}'.");
+                return NotFound($"Password is already set.");
             }
 
             _code = code;

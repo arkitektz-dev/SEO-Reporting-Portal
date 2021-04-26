@@ -21,8 +21,8 @@ namespace SEO_Reporting_Portal.ViewModels
         public string Email { get; set; }
 
         [Required]
-        [DateShouldBeGreaterThanCurrentDate]
         [Display(Name = "Contract Start Date")]
+
         public DateTime? ContractStartDate { get; set; }
 
         [Required]

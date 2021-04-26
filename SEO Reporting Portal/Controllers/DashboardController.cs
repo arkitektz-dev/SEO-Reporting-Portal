@@ -63,7 +63,7 @@ namespace SEO_Reporting_Portal.Controllers
 
             var days = new DateTime(currentYear, currentMonth, currentDay).Subtract(userReports.Count == 0 ? user.ContractStartDate.Value : userReports[0].CreatedOn).Days;
             userViewModel.TotalReports = userReports.Count;
-            userViewModel.UpcomingReportDays = daysInMonth - days;
+            userViewModel.UpcomingReportDays = days > 0 ? daysInMonth - days : 0;
 
             return View("UserDashboard", userViewModel);
         }

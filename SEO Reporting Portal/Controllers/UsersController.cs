@@ -22,6 +22,7 @@ namespace SEO_Reporting_Portal.Controllers
         private readonly UserManager<User> _userManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger<UsersController> _logger;
+        private static string _userId;
 
         public UsersController(
             UserManager<User> userManager,
@@ -82,29 +83,56 @@ namespace SEO_Reporting_Portal.Controllers
             return View("UserForm", model);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> ResendEmailConfirmation(string email)
+        public async Task<IActionResult> SetPassword(string id)
         {
-            if (ModelState.IsValid)
+            if (id == null)
             {
-                return View();
+                return BadRequest("user id must be supplied to set password.");
             }
 
-            var user = await _userManager.FindByEmailAsync(email);
+            var user = await _userManager.FindByIdAsync(id);
+
             if (user == null)
             {
-                ModelState.AddModelError(string.Empty, "Verification email sent. Please check your email.");
+                return NotFound($"Unable to load user with ID '{id}'.");
+            }
+
+            _userId = id;
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SetPassword(SetPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
                 return View();
             }
 
+            var user = await _userManager.FindByIdAsync(_userId);
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-            code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-            var callbackUrl = Url.Action("SetPassword", "Account", values: new { userId = user.Id, code }, Request.Scheme);
-            var emailres = _emailSender.SendEmailAsync(email, "Confirm your email",
-                    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+            var result = await _userManager.ConfirmEmailAsync(user, code);
 
-            ModelState.AddModelError(string.Empty, "Verification email sent. Please check your email.");
-            return View();
+            if (result.Succeeded)
+            {
+                var addPasswordResult = await _userManager.AddPasswordAsync(user, model.Password);
+                if (!addPasswordResult.Succeeded)
+                {
+                    foreach (var error in addPasswordResult.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    return View(model);
+                }
+
+                _userId = null;
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError(string.Empty, "Some Error Occured");
+            return View(model);
         }
+
     }
 }

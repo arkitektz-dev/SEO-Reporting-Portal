@@ -533,7 +533,7 @@ footer {
     background: #31353D;
     display: flex;
     padding: 1px;
-    z-index: 5;
+    z-index: 100;
 }
 
     footer div {

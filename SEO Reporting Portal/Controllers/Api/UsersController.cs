@@ -2,14 +2,18 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using SEO_Reporting_Portal.Dtos.User;
 using SEO_Reporting_Portal.Models;
 using SEO_Reporting_Portal.Models.Data;
+using SEO_Reporting_Portal.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 
 namespace SEO_Reporting_Portal.Controllers.Api
@@ -22,11 +26,13 @@ namespace SEO_Reporting_Portal.Controllers.Api
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<User> _userManager;
+        private readonly IEmailSender _emailSender;
         private readonly ILogger<UsersController> _logger;
-        public UsersController(ApplicationDbContext context, UserManager<User> userManager, ILogger<UsersController> logger)
+        public UsersController(ApplicationDbContext context, UserManager<User> userManager, IEmailSender emailSender, ILogger<UsersController> logger)
         {
             _context = context;
             _userManager = userManager;
+            _emailSender = emailSender;
             _logger = logger;
         }
 
@@ -69,6 +75,29 @@ namespace SEO_Reporting_Portal.Controllers.Api
 
             await _context.SaveChangesAsync();
 
+            return Ok();
+        }
+
+        [HttpPost("ResendEmailConfirmation")]
+        public async Task<IActionResult> ResendEmailConfirmation(ResendEmailConfirmationDto resendEmailConfirmationDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var user = await _userManager.FindByIdAsync(resendEmailConfirmationDto.UserId);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "Verification email sent. Please check your email.");
+                return NotFound();
+            }
+
+            var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+            var callbackUrl = Url.Action("SetPassword", "Account", values: new { userId = user.Id, code }, Request.Scheme);
+            _ = _emailSender.SendEmailAsync(user.Email, "Confirm your email",
+                $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+            ModelState.AddModelError(string.Empty, "Verification email sent. Please check your email.");
             return Ok();
         }
     }

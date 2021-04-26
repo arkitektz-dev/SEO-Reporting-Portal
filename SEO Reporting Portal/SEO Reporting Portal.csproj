@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>SEO_Reporting_Portal</RootNamespace>
+    <UserSecretsId>9a2d5c96-0382-4646-96e0-10731806d7fc</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
