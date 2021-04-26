@@ -41,6 +41,7 @@
 
 @section scripts {
     <script>
+        const API_Endpoint = `${baseUrl}/api/reports`;
         $(function () {
             $('.timeperiod-select2').select2();
             getReports();
@@ -52,7 +53,7 @@
         });
 
         async function getReports() {
-            const { data } = await axios.get("/api/reports");
+            const { data } = await axios.get(API_Endpoint);
             const reportsMarkup = data.reports.map(report => {
                 const path = extractFormatIconPath(report.format);
                 return `<tr id=${report.id}>
@@ -70,7 +71,7 @@
             $('#report-table').DataTable();
         }
         async function getReportsByTimePeriod(timePeriod) {
-            const { data } = await axios.get(`/api/reports/getReportsByTimePeriod/${timePeriod}`);
+            const { data } = await axios.get(`${API_Endpoint}/getReportsByTimePeriod/${timePeriod}`);
             const reportsMarkup = data.map(report => {
                 const path = extractFormatIconPath(report.format);
                 return `<tr id=${report.id}>
@@ -79,7 +80,7 @@
 <td>${report.userFullName}</td>
 <td>${report.userEmail}</td>
 <td>${report.createdOn}</td>
-<td><a href="/reports/download/${report.id}" class="small-box-footer">Download</a></td>
+<td><a href="${baseUrl}/reports/download/${report.id}" class="small-box-footer">Download</a></td>
 </tr>`});
             $('table tbody').empty();
             $('table tbody').append(reportsMarkup.join(''));
@@ -89,16 +90,16 @@
             let iconPath = ''
             switch (format) {
                 case '.jpg':
-                    iconPath = '/images/icons/icon-jpg.png';
+                    iconPath = `${baseUrl}/images/icons/icon-jpg.png`;
                     break;
                 case '.png':
-                    iconPath = '/images/icons/icon-png.png';
+                    iconPath = `${baseUrl}/images/icons/icon-png.png`;
                     break;
                 case '.pdf':
-                    iconPath = '/images/icons/icon-pdf.png';
+                    iconPath = `${baseUrl}/images/icons/icon-pdf.png`;
                     break;
                 case '.doc':
-                    iconPath = '/images/icons/icon-word.png';
+                    iconPath = `${baseUrl}/images/icons/icon-word.png`;
                     break;
                 default:
                     // code block

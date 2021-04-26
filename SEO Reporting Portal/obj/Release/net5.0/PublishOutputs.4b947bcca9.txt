@@ -17,6 +17,7 @@ G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwro
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\js\adminDashboard.js
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\js\adminReportInquiries.js
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\js\chat.js
+G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\js\config.js
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\js\layout.js
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\js\userDashboard.js
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\js\userReportInquiries.js
@@ -67,6 +68,12 @@ G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwro
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\bootstrap\LICENSE
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\bootswatch\minty\bootstrap.css
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\bootswatch\minty\bootstrap.min.css
+G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\datatables\css\jquery.dataTables.min.css
+G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\datatables\images\sort_asc.png
+G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\datatables\images\sort_asc_disabled.png
+G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\datatables\images\sort_both.png
+G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\datatables\images\sort_desc.png
+G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\datatables\images\sort_desc_disabled.png
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\datatables\js\jquery.dataTables.js
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\datatables\js\jquery.dataTables.min.js
 G:\SEO-Reporting-Portal\SEO Reporting Portal\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\datatables\License.txt

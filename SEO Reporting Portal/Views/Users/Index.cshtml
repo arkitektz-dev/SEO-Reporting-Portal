@@ -38,6 +38,7 @@
 
 @section scripts {
     <script>
+        const API_Endpoint = `${baseUrl}/api/users`;
         $(function () {
             getUsers();
             $('.table tbody').on('change', '.dd-user-status', async function () {
@@ -63,7 +64,7 @@
         });
 
         async function getUsers() {
-            const response = await axios.get("/api/users");
+            const response = await axios.get(API_Endpoint);
             console.log(response.data)
             const usersMarkup = response.data.map(user =>
                 `<tr id=${user.id}><td>${user.fullName}</td><td>${user.email}</td><td>${user.contractStartDate}</td><td>${user.contractEndDate}</td><td>${user.emailConfirmed}</td><td><select class="dd-user-status"><option value="Active" ${user.status === 'Active' ? 'selected' : ''}>Active</option><option value="Suspended" ${user.status === 'Suspended' ? 'selected' : ''}>Suspend</option><option value="Deleted" ${user.status === 'Deleted' ? 'selected' : ''}>Delete</option></select></td><td>${!user.emailConfirmed ? `<button class="btn btn-link btn-resend-email">Resend Email</button><a class="btn btn-link" href="/users/setPassword/${user.id}">Activate</button>` : ''}</td></tr>`
@@ -74,7 +75,7 @@
         }
 
         async function resendEmailConfirmation(userId) {
-            const { data, status } = await axios.post(`/api/users/resendEmailConfirmation`, { userId });
+            const { data, status } = await axios.post(`${API_Endpoint}/resendEmailConfirmation`, { userId });
             if (status === 200)
                 toastr.success('Email send successfully');
             else
@@ -82,13 +83,12 @@
         }
 
         async function changeUserStatus(userId, accountStatus) {
-            const { data, status } = await axios.put(`/api/users/updateUserStatus/${userId}`, { status: accountStatus });
+            const { data, status } = await axios.put(`${API_Endpoint}/updateUserStatus/${userId}`, { status: accountStatus });
 
             if (status === 200)
                 toastr.success('Successfully updated');
             else
                 toastr.success('Some Error Occured');
         }
-
     </script>
 }

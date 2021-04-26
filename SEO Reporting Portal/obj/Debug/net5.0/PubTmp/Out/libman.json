@@ -1,0 +1,197 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "bootstrap@4.6.0",
+      "destination": "wwwroot/lib/bootstrap/",
+      "files": [
+        "LICENSE",
+        "dist/css/bootstrap-grid.css",
+        "dist/css/bootstrap-grid.css.map",
+        "dist/css/bootstrap-grid.min.css",
+        "dist/css/bootstrap-grid.min.css.map",
+        "dist/css/bootstrap-reboot.css",
+        "dist/css/bootstrap-reboot.css.map",
+        "dist/css/bootstrap-reboot.min.css",
+        "dist/css/bootstrap-reboot.min.css.map",
+        "dist/css/bootstrap.css",
+        "dist/css/bootstrap.css.map",
+        "dist/css/bootstrap.min.css",
+        "dist/css/bootstrap.min.css.map",
+        "dist/js/bootstrap.bundle.js",
+        "dist/js/bootstrap.bundle.js.map",
+        "dist/js/bootstrap.bundle.min.js",
+        "dist/js/bootstrap.bundle.min.js.map",
+        "dist/js/bootstrap.js",
+        "dist/js/bootstrap.js.map",
+        "dist/js/bootstrap.min.js",
+        "dist/js/bootstrap.min.js.map"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "dropzone@5.9.2",
+      "destination": "wwwroot/lib/dropzone/",
+      "files": [
+        "min/dropzone.min.js",
+        "min/basic.min.css",
+        "min/dropzone.min.css"
+      ]
+    },
+    {
+      "library": "@microsoft/signalr@5.0.5",
+      "destination": "wwwroot/lib/signalr/",
+      "files": [
+        "dist/browser/signalr.js",
+        "dist/browser/signalr.js.map",
+        "dist/browser/signalr.min.js",
+        "dist/browser/signalr.min.js.map"
+      ]
+    },
+    {
+      "library": "select2@4.1.0-rc.0",
+      "destination": "wwwroot/lib/select2/",
+      "files": [
+        "dist/css/select2.css",
+        "dist/css/select2.min.css",
+        "dist/js/select2.js",
+        "dist/js/select2.min.js",
+        "dist/js/i18n/af.js",
+        "dist/js/i18n/ar.js",
+        "dist/js/i18n/az.js",
+        "dist/js/i18n/bg.js",
+        "dist/js/i18n/bn.js",
+        "dist/js/i18n/bs.js",
+        "dist/js/i18n/build.txt",
+        "dist/js/i18n/ca.js",
+        "dist/js/i18n/cs.js",
+        "dist/js/i18n/da.js",
+        "dist/js/i18n/de.js",
+        "dist/js/i18n/dsb.js",
+        "dist/js/i18n/el.js",
+        "dist/js/i18n/en.js",
+        "dist/js/i18n/eo.js",
+        "dist/js/i18n/es.js",
+        "dist/js/i18n/et.js",
+        "dist/js/i18n/eu.js",
+        "dist/js/i18n/fa.js",
+        "dist/js/i18n/fi.js",
+        "dist/js/i18n/fr.js",
+        "dist/js/i18n/gl.js",
+        "dist/js/i18n/he.js",
+        "dist/js/i18n/hi.js",
+        "dist/js/i18n/hr.js",
+        "dist/js/i18n/hsb.js",
+        "dist/js/i18n/hu.js",
+        "dist/js/i18n/hy.js",
+        "dist/js/i18n/id.js",
+        "dist/js/i18n/is.js",
+        "dist/js/i18n/it.js",
+        "dist/js/i18n/ja.js",
+        "dist/js/i18n/ka.js",
+        "dist/js/i18n/km.js",
+        "dist/js/i18n/ko.js",
+        "dist/js/i18n/lt.js",
+        "dist/js/i18n/lv.js",
+        "dist/js/i18n/mk.js",
+        "dist/js/i18n/ms.js",
+        "dist/js/i18n/nb.js",
+        "dist/js/i18n/ne.js",
+        "dist/js/i18n/nl.js",
+        "dist/js/i18n/pa.js",
+        "dist/js/i18n/pl.js",
+        "dist/js/i18n/ps.js",
+        "dist/js/i18n/pt-BR.js",
+        "dist/js/i18n/pt.js",
+        "dist/js/i18n/ro.js",
+        "dist/js/i18n/ru.js",
+        "dist/js/i18n/sk.js",
+        "dist/js/i18n/sl.js",
+        "dist/js/i18n/sq.js",
+        "dist/js/i18n/sr-Cyrl.js",
+        "dist/js/i18n/sr.js",
+        "dist/js/i18n/sv.js",
+        "dist/js/i18n/te.js",
+        "dist/js/i18n/th.js",
+        "dist/js/i18n/tk.js",
+        "dist/js/i18n/tr.js",
+        "dist/js/i18n/uk.js",
+        "dist/js/i18n/vi.js",
+        "dist/js/i18n/zh-CN.js",
+        "dist/js/i18n/zh-TW.js"
+      ]
+    },
+    {
+      "library": "datatables.net@1.10.24",
+      "destination": "wwwroot/lib/datatables/",
+      "files": [
+        "js/jquery.dataTables.js",
+        "js/jquery.dataTables.min.js",
+        "License.txt"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "font-awesome@5.15.3",
+      "destination": "wwwroot/lib/font-awesome/",
+      "files": [
+        "css/all.min.css",
+        "css/all.css",
+        "webfonts/fa-brands-400.eot",
+        "webfonts/fa-brands-400.svg",
+        "webfonts/fa-brands-400.ttf",
+        "webfonts/fa-brands-400.woff",
+        "webfonts/fa-brands-400.woff2",
+        "webfonts/fa-regular-400.eot",
+        "webfonts/fa-regular-400.svg",
+        "webfonts/fa-regular-400.ttf",
+        "webfonts/fa-regular-400.woff",
+        "webfonts/fa-regular-400.woff2",
+        "webfonts/fa-solid-900.eot",
+        "webfonts/fa-solid-900.svg",
+        "webfonts/fa-solid-900.ttf",
+        "webfonts/fa-solid-900.woff",
+        "webfonts/fa-solid-900.woff2"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "bootswatch@4.6.0",
+      "destination": "wwwroot/lib/bootswatch/",
+      "files": [
+        "minty/bootstrap.css",
+        "minty/bootstrap.min.css"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "axios@0.21.1",
+      "destination": "wwwroot/lib/axios/",
+      "files": [
+        "axios.js",
+        "axios.map",
+        "axios.min.js",
+        "axios.min.map"
+      ]
+    },
+    {
+      "library": "toastr@2.1.4",
+      "destination": "wwwroot/lib/toastr/",
+      "files": [
+        "build/toastr.css",
+        "build/toastr.js.map",
+        "build/toastr.min.css",
+        "build/toastr.min.js"
+      ]
+    },
+    {
+      "library": "sweetalert2@10.16.4",
+      "destination": "wwwroot/lib/sweetalert2/",
+      "files": [
+        "dist/sweetalert2.min.js",
+        "dist/sweetalert2.min.css"
+      ]
+    }
+  ]
+}
