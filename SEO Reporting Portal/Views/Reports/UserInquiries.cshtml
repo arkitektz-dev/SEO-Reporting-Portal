@@ -4,38 +4,73 @@
 @{
 }
 
-<div class="row mb-5">
-    <!-- Users box-->
-    <div class="col-5 pr-0">
-        <div class="bg-white">
-            <div class="bg-gray px-4 py-2 bg-light">
-                <p class="h5 mb-0 py-1">Recent</p>
-            </div>
 
-            <div class="chat-list-container">
-                <div class="list-group rounded-0"></div>
+<div class="row mb-5">
+    <div id="frame">
+        <div id="sidepanel">
+            <div id="profile">
+                <div class="wrap">
+                    <p>Reports</p>
+                </div>
+            </div>
+            <div id="contacts" class="inbox-users-container">
+                <ul class="inbox-users">
+                </ul>
             </div>
         </div>
-    </div>
-    <!-- Chat Box-->
-    <div class="col-7 pl-0">
-        <div class="px-4 py-5 chat-message-box bg-white">
-            <div class="messages-container">
+        <div class="content">
+            <div class="contact-profile user-profile">
 
             </div>
-            <div class="message-typing-container">
-                <form class="bg-light" method="post">
-                    <div class="input-group">
-                        <input type="text" id="txt-message" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light messg">
-                        <div class="input-group-append">
-                            <button type="submit" class="send-message-btn btn btn-link"><i class="fa fa-paper-plane"></i></button>
-                        </div>
-                    </div>
-                </form>
+            <div class="messages chat-container">
+                <ul class="chat-list">
+                </ul>
+            </div>
+            <div class="message-input">
+                <div class="wrap">
+                    <form class="bg-light" method="post">
+                        <input type="text" id="txt-message" placeholder="Write your message..." />
+                        <button type="submit" class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+@*<div class="row mb-5">
+        <div class="col-5 pr-0">
+            <div class="bg-white">
+                <div class="bg-gray px-4 py-2 bg-light">
+                    <p class="h5 mb-0 py-1">Recent</p>
+                </div>
+
+                <div class="chat-list-container">
+                    <div class="list-group rounded-0"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-7 pl-0">
+            <div class="px-4 py-5 chat-message-box bg-white">
+                <div class="messages-container">
+
+                </div>
+                <div class="message-typing-container">
+                    <form class="bg-light" method="post">
+                        <div class="input-group">
+                            <input type="text" id="txt-message" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light messg">
+                            <div class="input-group-append">
+                                <button type="submit" class="send-message-btn btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>*@
 
 @section scripts {
     <script src="~/js/userReportInquiries.js"></script>

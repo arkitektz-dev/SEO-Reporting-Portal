@@ -4,9 +4,47 @@
 @{
 }
 
+
 <div class="row mb-5">
-    <!-- Users box-->
-    <div class="col-5 pr-0">
+    <div id="frame">
+        <div id="sidepanel">
+            <div id="profile">
+                <div class="wrap">
+                    <p>Reports</p>
+                </div>
+            </div>
+            <div id="contacts" class="inbox-users-container">
+                <ul class="inbox-users">
+                </ul>
+            </div>
+            <div id="bottom-bar">
+                <a asp-action="Upload" asp-controller="Reports" id="addcontact"><i class="fa fa-user-plus fa-fw"></i> <span>Add Report</span></a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="contact-profile user-profile">
+
+            </div>
+            <div class="messages chat-container">
+                <ul class="chat-list">
+                </ul>
+            </div>
+            <div class="message-input">
+                <div class="wrap">
+                    <form class="bg-light" method="post">
+                        <input type="text" id="txt-message" placeholder="Write your message..." />
+                        <button type="submit" class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*<div class="row mb-5">*@
+<!-- Users box-->
+@*<div class="col-5 pr-0">
         <div class="bg-white">
             <div class="bg-gray px-4 py-2 bg-light">
                 <p class="h5 mb-0 py-1">Recent</p>
@@ -16,9 +54,9 @@
                 <div class="list-group rounded-0"></div>
             </div>
         </div>
-    </div>
-    <!-- Chat Box-->
-    <div class="col-7 pl-0">
+    </div>*@
+<!-- Chat Box-->
+@*<div class="col-7 pl-0">
         <div class="px-4 py-5 chat-message-box bg-white">
             <div class="messages-container">
 
@@ -34,8 +72,8 @@
                 </form>
             </div>
         </div>
-    </div>
-</div>
+    </div>*@
+
 
 @section scripts {
     <script src="~/js/adminReportInquiries.js"></script>

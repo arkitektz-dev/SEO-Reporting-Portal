@@ -3,12 +3,11 @@
 $(function () {
 
     connection.on("ReceiveReportComment", function (commentDto) {
-        var focusedReportId = $('.chat-list-container').find('.active').attr('id');
+        var focusedReportId = $('.contact.active-user').attr('id');
         if (focusedReportId == commentDto.reportId) {
-            console.log(commentDto);
             const messagesMarkup = makeMessagesMarkup([commentDto]);
-            $('.no-message-container').remove();
-            $('.messages-container').append(messagesMarkup);
+            //$('.no-message-container').remove();
+            $('.chat-list').append(messagesMarkup);
         }
         changeRecentMessage({
             reportId: commentDto.reportId,
@@ -25,10 +24,11 @@ $(function () {
     $("form").submit(async function (e) {
         e.preventDefault();
         const text = $('#txt-message').val();
-        var reportId = $('.chat-list-container').find('.active').attr('id');
+        var reportId = $('.contact.active-user').attr('id');
         if (text.length > 0) {
             const { data } = await axios.post(`${API_Endpoint}/inquiry`, { text, reportId });
             $('#txt-message').val('');
+            $(".messages").animate({ scrollTop: $('.messages').prop("scrollHeight") }, 1000);
             connection.invoke("SendReportComment", reportId, data).catch(function (err) {
                 return console.error(err.toString());
             });
@@ -42,96 +42,89 @@ async function getInquiriesByReport() {
     const { data } = await axios.get(`${API_Endpoint}/getInquiries`);
     if (data.length > 0) {
         const inboxMarkup = makeInboxMarkup(data);
-        $('.chat-list-container').append(inboxMarkup);
+        $('.inbox-users').append(inboxMarkup);
         const messagesMarkup = makeMessagesMarkup(data[0].comments);
-        $('.messages-container').append(messagesMarkup);
+        $('.chat-list').append(messagesMarkup);
     }
+}
+
+async function getInquiriesByReportId() {
+    var reportId = $(this).attr('id');
+    $(".contact").removeClass("active-user");
+    $(this).addClass('active-user');
+
+    const { data } = await axios.get(`${API_Endpoint}/getInquiriesByReportId/${reportId}`);
+    let messagesMarkup;
+    $('.chat-list').empty();
+    messagesMarkup = makeMessagesMarkup(data);
+    $('.chat-list').append(messagesMarkup);
 }
 
 function makeInboxMarkup(reports) {
     return reports.map((report, index) => {
+        const activeClass = index === 0 ? 'active-user' : '';
         const icon = extractFormatIconPath(report.format);
-
         const recentMessage = {
             sentDate: report.recentComment !== null ? report.recentComment.sentDate : '',
             sentTime: report.recentComment !== null ? report.recentComment.sentTime : '',
             text: report.recentComment !== null ? report.recentComment.text : '',
         };
-        const activeClasses = index === 0 ? 'active text-white' : 'list-group-item-light';
-        return `<span class="list-group-item list-group-item-action rounded-0 ${activeClasses}" id=${report.id}>
-            <div class="media">
-                <img src="${icon}" alt="user" width="50">
-                <div class="media-body ml-4">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <h6 class="mb-0 user-name">${report.userFullName}</h6>
-                        <small class="small font-weight-bold recent-message-time">${recentMessage.sentTime ? recentMessage.sentTime : ''}</small>
-                    </div>
-                    <p class="font-italic mb-0 text-small user-email">${report.userEmail}</p>
-                    <p class="font-italic mb-0 text-small report-name">${report.name}</p>
-                    <p class="font-italic mb-0 text-small recent-message">${recentMessage.text || ''}</p>
-                </div>
-            </div>
-        </span>`
+        return `<li class="contact ${activeClass}" id=${report.id}>
+                   <div class="wrap">
+                        <div class="avatar-container" style="height: 65px;">
+                            <img src="${icon}" alt="report">
+                        </div>
+                        <div class="meta">
+                           <p class="name user-name">${report.userFullName}</p>
+                           <p class="user-email">${report.userEmail}</p>
+                           <p class="report-name">${report.name}</p>
+                           <p class="preview recent-message-text">${recentMessage.text}</p>
+                        </div>
+                   </div>
+        </li>`;
     }).join('');
 }
 
 function makeMessagesMarkup(comments) {
-    const icon = $('.chat-list-container').find('.active .media img').attr('src');
+    const icon = $('.contact.active-user img').attr('src');
+    const reportName = $('.contact.active-user .report-name').text();
+    $('.user-profile').html(`<img src="${icon}" alt="user" class="rounded-circle" /><p>${reportName}</p>`);
+
     if (comments.length > 0) {
         return comments.map((comment) => {
-            if (comment.respondentId == null) {
-                return `<div class="media w-50 mb-3" id=${comment.id}><img src="/images/icons/icon-user-2.png" alt="user" width="50" class="rounded-circle"><div class="media-body ml-3"><div class="bg-light rounded py-2 px-3 mb-2"><p class="text-small mb-0 text-muted">${comment.text}</p></div><p class="small text-muted">${comment.sentTime} | ${comment.sentDate}</p></div></div>`
-            }
-            return `<div class="media w-50 ml-auto mb-3" id=${comment.id}><div class="media-body"><div class="bg-primary rounded py-2 px-3 mb-2"><p class="text-small mb-0 text-white">${comment.text}</p></div><p class="small text-muted">${comment.sentTime} | ${comment.sentDate}</p></div></div>`
+            const positionClass = comment.respondentId !== null ? 'sent' : 'replies';
+            return `<li class="${positionClass}">
+                        <div class="chat-message-container">
+                            <div>
+                               <img src="${icon}" alt="user" class="rounded-circle" />
+                               <p class="chat-message">${comment.text}</p>
+                            </div>
+                           <div class="chat-message-time"><span>${comment.sentTime} | ${comment.sentDate}</span></div>
+                        </div>
+            </li>`;
         }).join('');
-    }
-    else {
-        var userName = $('.chat-list-container').find('.active .user-name').text();
-        var userEmail = $('.chat-list-container').find('.active .user-email').text();
-        var reportName = $('.chat-list-container').find('.active .report-name').text();
-        return `<div style="text-align:center;" class="no-message-container">
-           <img src="${icon}" alt="user" width="70">
-           <h6 class="mt-2">${userName}<h6>
-           <h6 class="mt-2">${userEmail}<h6>
-           <h6 class="mt-2">${reportName}<h6>
-        </div>`;
     }
 }
 
 function changeRecentMessage(comment) {
-    $(`#${comment.reportId} .recent-message-time`).text(comment.sentTime);
-    $(`#${comment.reportId} .recent-message`).text(comment.text);
-}
-
-async function getInquiriesByReportId() {
-    var reportId = $(this).attr('id');
-    $('.list-group-item').addClass('list-group-item-light');
-    $(".list-group-item").removeClass("active text-white");
-    $(this).removeClass('list-group-item-light');
-    $(this).addClass('active text-white');
-
-    const { data } = await axios.get(`${API_Endpoint}/getInquiriesByReportId/${reportId}`);
-    console.log(data);
-    let messagesMarkup;
-    $('.messages-container').empty();
-    messagesMarkup = makeMessagesMarkup(data);
-    $('.messages-container').append(messagesMarkup);
+    $(`#${comment.reportId} .chat_date`).text(comment.sentTime);
+    $(`#${comment.reportId} .recent-message-text`).text(comment.text);
 }
 
 function extractFormatIconPath(format) {
     let iconPath = ''
     switch (format) {
         case '.jpg':
-            iconPath = '/images/icons/icon-jpg-64.png';
+            iconPath = `${baseUrl}/images/icons/icon-jpg-64.png`;
             break;
         case '.png':
-            iconPath = '/images/icons/icon-png-64.png';
+            iconPath = `${baseUrl}/images/icons/icon-png-64.png`;
             break;
         case '.pdf':
-            iconPath = '/images/icons/icon-pdf-64.png';
+            iconPath = `${baseUrl}/images/icons/icon-pdf-64.png`;
             break;
         case '.doc':
-            iconPath = '/images/icons/icon-word-64.png';
+            iconPath = `${baseUrl}/images/icons/icon-word-64.png`;
             break;
         default:
             // code block

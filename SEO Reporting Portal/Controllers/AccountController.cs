@@ -60,13 +60,13 @@ namespace SEO_Reporting_Portal.Controllers
                         else if (user.Status == AccountStatus.Deleted)
                         {
                             _logger.LogWarning("User account Deleted.");
-                            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                            ModelState.AddModelError(string.Empty, "Your account is deleted.");
                             return View(model);
                         }
                         else if (user.Status == AccountStatus.Suspended)
                         {
                             _logger.LogWarning("User account Suspended.");
-                            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                            ModelState.AddModelError(string.Empty, "Your account is suspended.");
                             return View(model);
                         }
                     }
