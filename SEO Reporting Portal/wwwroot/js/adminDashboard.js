@@ -93,7 +93,7 @@ function makeMessagesMarkup(messages) {
 
     if (messages.length > 0) {
         return messages.map((message) => {
-            const positionClass = message.respondentId !== null ? 'sent' : 'replies';
+            const positionClass = message.respondentId !== null ? 'replies' : 'sent';
             const avatarKeyword = message.respondentId !== null ? 'Y' : userName[0];
             return `<li class="${positionClass}">
                         <div class="chat-message-container">
