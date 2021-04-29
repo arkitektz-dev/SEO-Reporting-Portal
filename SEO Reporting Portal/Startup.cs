@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NETCore.MailKit.Extensions;
+using NETCore.MailKit.Infrastructure.Internal;
 using SEO_Reporting_Portal.Hubs;
 using SEO_Reporting_Portal.Models;
 using SEO_Reporting_Portal.Models.Data;
@@ -59,6 +61,19 @@ namespace SEO_Reporting_Portal
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
                 options.User.RequireUniqueEmail = true;
                 options.SignIn.RequireConfirmedEmail = true;
+            });
+            services.AddMailKit(optionBuilder =>
+            {
+                optionBuilder.UseMailKit(new MailKitOptions()
+                {
+                    Server = Configuration["MailSettings:Server"],
+                    Port = Convert.ToInt32(Configuration["MailSettings:Port"]),
+                    SenderName = Configuration["MailSettings:SenderName"],
+                    SenderEmail = Configuration["MailSettings:SenderEmail"],
+                    Account = Configuration["MailSettings:Account"],
+                    Password = Configuration["MailSettings:Password"],
+                    Security = Convert.ToBoolean(Configuration["MailSettings:Security"])
+                });
             });
         }
 

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using NETCore.MailKit.Core;
 using SEO_Reporting_Portal.Models;
 using SEO_Reporting_Portal.Services;
 using SEO_Reporting_Portal.ViewModels;
@@ -18,16 +19,16 @@ namespace SEO_Reporting_Portal.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private readonly IEmailSender _emailSender;
+        private readonly IEmailService _emailService;
         private readonly ILogger<AccountController> _logger;
         private static string _code;
         private static string _userId;
 
-        public AccountController(SignInManager<User> signInManager, UserManager<User> userManager, IEmailSender emailSender, ILogger<AccountController> logger)
+        public AccountController(SignInManager<User> signInManager, UserManager<User> userManager, IEmailService emailService, ILogger<AccountController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _emailSender = emailSender;
+            _emailService = emailService;
             _logger = logger;
         }
 
@@ -223,8 +224,8 @@ namespace SEO_Reporting_Portal.Controllers
                 code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                 var callbackUrl = Url.Action("ResetPassword", "Account", values: new { userId = user.Id, code }, Request.Scheme);
 
-                _ = _emailSender.SendEmailAsync(model.Email, "Reset Password",
-                 $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                _ = _emailService.SendAsync(model.Email, "Reset Password",
+                  $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.", true);
 
                 ModelState.Clear();
                 var viewModel = new ForgotPasswordViewModel()

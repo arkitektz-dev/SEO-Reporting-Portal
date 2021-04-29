@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using NETCore.MailKit.Core;
 using SEO_Reporting_Portal.Models;
 using SEO_Reporting_Portal.Services;
 using SEO_Reporting_Portal.ViewModels;
@@ -20,20 +21,20 @@ namespace SEO_Reporting_Portal.Controllers
     {
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
-        private readonly IEmailSender _emailSender;
+        private readonly IEmailService _emailService;
         private readonly ILogger<UsersController> _logger;
         private static string _userId;
 
         public UsersController(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
-            IEmailSender emailSender,
+            IEmailService emailService,
             ILogger<UsersController> logger
             )
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _emailSender = emailSender;
+            _emailService = emailService;
             _logger = logger;
         }
 
@@ -67,8 +68,9 @@ namespace SEO_Reporting_Portal.Controllers
                         var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                         code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                         var callbackUrl = Url.Action("SetPassword", "Account", values: new { userId = user.Id, code }, Request.Scheme);
-                        _ = _emailSender.SendEmailAsync(model.Email, "Confirm your email",
-                       $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+                        _ = _emailService.SendAsync(model.Email, "Confirm your email",
+                      $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.", true);
 
                         return RedirectToAction("Index", "Users");
                     }
