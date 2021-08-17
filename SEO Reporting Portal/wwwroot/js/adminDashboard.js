@@ -1,13 +1,11 @@
 ﻿const API_Endpoint = `${baseUrl}/api/generalInquiries`;
 
 $(function () {
-
     connection.on("ReceiveMessage", function (generalInquiryDto) {
-        var focusedUserId = $('.contact.active-user').attr('id');
+        const focusedUserId = $('.contact.active-user').attr('id');
         if (focusedUserId == generalInquiryDto.userId) {
-            const messagesMarkup = makeMessagesMarkup([generalInquiryDto]);
-            //$('.no-message-container').remove();
-            $('.chat-list').append(messagesMarkup);
+            const elems = $(".chat-message i").parent().filter((i, elem) => elem.innerText.trim() === generalInquiryDto.message);
+            $($(elems[0]).find('i')).remove();
         }
         changeRecentMessage({
             userId: generalInquiryDto.userId,
@@ -25,13 +23,40 @@ $(function () {
         e.preventDefault();
         const message = $('#txt-message').val();
         var userId = $('.contact.active-user').attr('id');
+       
+  
         if (message.length > 0) {
-            const { data } = await axios.post(API_Endpoint, { message, userId });
             $('#txt-message').val('');
             $(".messages").animate({ scrollTop: $('.messages').prop("scrollHeight") }, 1000);
-            connection.invoke("SendMessage", userId, data).catch(function (err) {
-                return console.error(err.toString());
-            });
+            const currentTime = moment();
+            const sentDate = currentTime.format("DD-mm-yyyy");
+            const sentTime = currentTime.format("hh:mm A");
+            const messageInfo = {
+                positionClass: 'replies',
+                avatarKeyword: 'Y',
+                message,
+                sentTime: sentTime,
+                sentDate: sentDate,
+                status: 'pending'
+            };
+            const messageToAppend = messageMarkup(messageInfo);
+            $('.chat-list').append(messageToAppend);
+
+            try {
+                const { data } = await axios.post(API_Endpoint, { message, userId });
+
+                connection.invoke("SendMessage", userId, data)
+                    .catch(function (err) {
+                        return console.error(err.toString());
+                    });
+            } catch (e) {
+                const elems = $(".chat-message i").parent().filter((i, elem) => elem.innerText.trim() === message);
+                elems.each((i, elem) => {
+                    var icon = $(elem).find('i');
+                    icon.attr('class', 'fas fa-times');
+                    icon.css("color", "red")
+                });
+            }
         }
         else {
         }
@@ -95,15 +120,16 @@ function makeMessagesMarkup(messages) {
         return messages.map((message) => {
             const positionClass = message.respondentId !== null ? 'replies' : 'sent';
             const avatarKeyword = message.respondentId !== null ? 'Y' : userName[0];
-            return `<li class="${positionClass}">
-                        <div class="chat-message-container">
-                            <div>
-                                <span class="user-chat-avatar">${avatarKeyword}</span>
-                                <p class="chat-message">${message.message}</p>
-                            </div>
-                            <div class="chat-message-time"><span>${message.sentTime} | ${message.sentDate}</span></div>
-                        </div>
-            </li>`;
+            const messageInfo = {
+                positionClass,
+                avatarKeyword,
+                message: message.message,
+                sentTime: message.sentTime,
+                sentDate: message.sentDate
+            };
+
+            return messageMarkup(messageInfo);
+
         }).join('');
     }
 
@@ -112,4 +138,19 @@ function makeMessagesMarkup(messages) {
 function changeRecentMessage(message) {
     $(`#${message.userId} .chat_date`).text(message.sentTime);
     $(`#${message.userId} .recent-message-text`).text(message.message);
+}
+
+function messageMarkup(messageInfo) {
+    return `<li class="${messageInfo.positionClass}">
+       <div class="chat-message-container">
+          <div>
+            <span class="user-chat-avatar">${messageInfo.avatarKeyword}</span>
+            <p class="chat-message">
+                ${messageInfo.message}
+                ${messageInfo.status === 'pending' ? `<i class="far fa-clock"></i>` : ``}
+            </p>
+          </div>
+          <div class="chat-message-time"><span>${messageInfo.sentTime} | ${messageInfo.sentDate}</span></div>
+       </div>
+    </li>`;
 }

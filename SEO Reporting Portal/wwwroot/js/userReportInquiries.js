@@ -3,9 +3,8 @@ $(function () {
     connection.on("ReceiveReportComment", function (commentDto) {
         var focusedReportId = $('.contact.active-user').attr('id');
         if (focusedReportId == commentDto.reportId) {
-            const messagesMarkup = makeMessagesMarkup([commentDto]);
-            //$('.no-message-container').remove();
-            $('.chat-list').append(messagesMarkup);
+            const elems = $(".chat-message i").parent().filter((i, elem) => elem.innerText.trim() === commentDto.text);
+            $($(elems[0]).find('i')).remove();
         }
         changeRecentMessage({
             reportId: commentDto.reportId,
@@ -24,12 +23,37 @@ $(function () {
         const text = $('#txt-message').val();
         var reportId = $('.contact.active-user').attr('id');
         if (text.length > 0) {
-            const { data } = await axios.post(`${API_Endpoint}/inquiry`, { text, reportId });
             $('#txt-message').val('');
             $(".messages").animate({ scrollTop: $('.messages').prop("scrollHeight") }, 1000);
-            connection.invoke("SendReportComment", reportId, data).catch(function (err) {
-                return console.error(err.toString());
-            });
+            const currentTime = moment();
+            const sentDate = currentTime.format("DD-mm-yyyy");
+            const sentTime = currentTime.format("hh:mm A");
+            const icon = $('.contact.active-user img').attr('src');
+            const messageInfo = {
+                positionClass: 'replies',
+                icon,
+                text,
+                sentTime: sentTime,
+                sentDate: sentDate,
+                status: 'pending'
+            };
+            const messageToAppend = messageMarkup(messageInfo);
+            $('.chat-list').append(messageToAppend);
+
+            try {
+                const { data } = await axios.post(`${API_Endpoint}/inquiry`, { text, reportId });
+
+                connection.invoke("SendReportComment", reportId, data).catch(function (err) {
+                    return console.error(err.toString());
+                });
+            } catch (e) {
+                const elems = $(".chat-message i").parent().filter((i, elem) => elem.innerText.trim() === text);
+                elems.each((i, elem) => {
+                    var icon = $(elem).find('i');
+                    icon.attr('class', 'fas fa-times');
+                    icon.css("color", "red")
+                });
+            }
         }
         else {
         }
@@ -91,16 +115,16 @@ function makeMessagesMarkup(comments) {
 
     if (comments.length > 0) {
         return comments.map((comment) => {
-            const positionClass = comment.respondentId === null ? 'sent' : 'replies';
-            return `<li class="${positionClass}">
-                        <div class="chat-message-container">
-                            <div>
-                               <img src="${icon}" alt="user" class="rounded-circle" />
-                               <p class="chat-message">${comment.text}</p>
-                            </div>
-                           <div class="chat-message-time"><span>${comment.sentTime} | ${comment.sentDate}</span></div>
-                        </div>
-            </li>`;
+            const positionClass = comment.respondentId === null ? 'replies' : 'sent';
+            const messageInfo = {
+                positionClass,
+                icon,
+                text: comment.text,
+                sentTime: comment.sentTime,
+                sentDate: comment.sentDate
+            };
+
+            return messageMarkup(messageInfo);
         }).join('');
     }
 }
@@ -131,4 +155,19 @@ function extractFormatIconPath(format) {
     }
 
     return iconPath;
+}
+
+function messageMarkup(commentInfo) {
+    return `<li class="${commentInfo.positionClass}">
+                        <div class="chat-message-container">
+                            <div>
+                               <img src="${commentInfo.icon}" alt="user" class="rounded-circle" />
+                               <p class="chat-message">
+                                    ${commentInfo.text}
+                                    ${commentInfo.status === 'pending' ? `<i class="far fa-clock"></i>` : ``}
+                               </p>
+                            </div>
+                           <div class="chat-message-time"><span>${commentInfo.sentTime} | ${commentInfo.sentDate}</span></div>
+                        </div>
+            </li>`;
 }
