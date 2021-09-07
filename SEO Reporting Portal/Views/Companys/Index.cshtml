@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-3">
+            <div class="card-header">
+                <span>Companys</span>
+                <div class="float-right">
+                    <a asp-action="Create" asp-controller="Companys" class="btn btn-sm btn-secondary"><i class="fa fa-plus"></i> <span>New Company</span></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover" id="company-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Website Url</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script>
+        const API_Endpoint = `${baseUrl}/api/companys`;
+        $(function () {
+            getCompanys();
+        });
+
+        async function getCompanys() {
+            const response = await axios.get(API_Endpoint);
+            console.log(response.data)
+            const companysMarkup = response.data.map(company =>
+                `<tr>
+                    <td>${company.name}</td>
+                    <td>${company.phoneNumber}</td>
+                    <td>${company.websiteUrl}</td>
+                    <td>
+                      <button class="btn btn-danger" onclick="deleteCompany('${company.id}',this)">Delete</button>  
+                    </td>
+                </tr>`
+            )
+
+            $('table tbody').append(companysMarkup.join(''));
+            $('#company-table').DataTable();
+        }
+
+        function deleteCompany(companyId, value) {
+
+            Swal.fire({
+                title: 'Are you sure?',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: 'No',
+                confirmButtonText: 'Yes'
+            }).then(async (result) => {
+                if (result.isConfirmed) {
+
+                   // const response = await axios.get(API_Endpoint + `/DeleteCompany?companyId=${companyId}`);
+                    //console.log(response);
+
+                    await axios
+                            .get(API_Endpoint + `/DeleteCompany?companyId=${companyId}`)
+                            .then(response => {
+                                if (response.request.status == 200) {
+                                    document.querySelector("table tbody").innerHTML = "";
+                                    getCompanys();
+                                }  
+                            })
+                            .catch(error => {
+                               
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'User affliated with that company'
+                                })
+                         });
+ 
+                }
+            });
+        }
+
+         
+
+    </script>
+}

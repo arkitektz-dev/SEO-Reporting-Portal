@@ -34,5 +34,14 @@ namespace SEO_Reporting_Portal.ViewModels
         [Display(Name = "Account Status")]
         public AccountStatus Status { get; set; }
 
+        [Display(Name = "User")]
+        public string UserId { get; set; }
+
+        [Display(Name = "Company")]
+        public string CompanyId { get; set; }
+
+        public IEnumerable<User> Users { get; set; }
+        public IEnumerable<Company> Companys { get; set; }
+    
     }
 }

@@ -40,6 +40,7 @@ namespace SEO_Reporting_Portal.Controllers.Api
         {
             var usersDto = new List<UserDto>();
             var users = await _userManager.GetUsersInRoleAsync(Roles.User.ToString());
+            var companyList = _context.Company.ToList();
             foreach (var user in users)
             {
                 var userDto = new UserDto
@@ -50,7 +51,8 @@ namespace SEO_Reporting_Portal.Controllers.Api
                     EmailConfirmed = user.EmailConfirmed,
                     ContractStartDate = user.ContractStartDate.Value.ToString("dd-MMM-yyyy"),
                     ContractEndDate = user.ContractEndDate.Value.ToString("dd-MMM-yyyy"),
-                    Status = user.Status.ToString()
+                    Status = user.Status.ToString(),
+                    CompanyName = companyList.Where(x => x.Id == user.CompanyId).Select(x => x.Name).FirstOrDefault()
                 };
 
                 usersDto.Add(userDto);

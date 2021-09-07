@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using NETCore.MailKit.Core;
 using SEO_Reporting_Portal.Models;
+using SEO_Reporting_Portal.Models.Data;
 using SEO_Reporting_Portal.Services;
 using SEO_Reporting_Portal.ViewModels;
 using System;
@@ -24,14 +25,17 @@ namespace SEO_Reporting_Portal.Controllers
         private readonly IEmailService _emailService;
         private readonly ILogger<UsersController> _logger;
         private static string _userId;
+        private readonly ApplicationDbContext _context;
 
         public UsersController(
+            ApplicationDbContext context,
             UserManager<User> userManager,
             SignInManager<User> signInManager,
             IEmailService emailService,
             ILogger<UsersController> logger
             )
         {
+            _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
             _emailService = emailService;
@@ -45,19 +49,93 @@ namespace SEO_Reporting_Portal.Controllers
 
         public IActionResult Create()
         {
-            return View("UserForm");
+
+            var companyList = _context.Company.ToList();
+
+            var model = new UserFormViewModel()
+            {
+                Companys = companyList
+            };
+
+            return View("UserForm", model);
         }
+
+        public IActionResult Edit(string UserId)
+        {
+
+            var UserDetail = _context.Users.Where(x => x.Id == UserId).FirstOrDefault();
+
+            var model = new UserFormViewModel()
+            {
+                FullName = UserDetail.FullName,
+                Email = UserDetail.Email,
+                ContractStartDate = UserDetail.ContractStartDate,
+                ContractEndDate = UserDetail.ContractEndDate,
+                Status = UserDetail.Status,
+                Companys = _context.Company.ToList(),
+                CompanyId = UserDetail.CompanyId,
+                UserId = UserDetail.Id
+             };
+
+
+
+            return View("EditUserForm", model);
+        }
+
+        [HttpPost]
+        public IActionResult EditUser(UserFormViewModel model)
+        {
+
+            if (ModelState.IsValid)
+            {
+
+                var userDetail = _context.Users.Where(x => x.Id == model.UserId).FirstOrDefault();
+
+                userDetail.FullName = model.FullName;
+                userDetail.Email = model.Email;
+                userDetail.ContractStartDate = model.ContractStartDate;
+                userDetail.ContractEndDate = model.ContractEndDate;
+                userDetail.CompanyId = model.CompanyId;
+                userDetail.Status = model.Status;
+
+                _context.SaveChanges();
+
+                var companyUserRow = new CompanyUser()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    CompanyId = model.CompanyId,
+                    UserId = model.UserId,
+                    CreatedDate = DateTime.Now.Date
+
+                };
+
+                _context.CompanyUsers.Add(companyUserRow);
+                _context.SaveChanges();
+
+
+                return RedirectToAction("Index", "Users");
+
+            }
+
+
+            // If we got this far, something failed, redisplay form
+            return View("EditUserForm", model);
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> Create(UserFormViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new User { FullName = model.FullName, UserName = model.Email, Email = model.Email, ContractStartDate = model.ContractStartDate, ContractEndDate = model.ContractEndDate, Status = model.Status };
+                var user = new User { FullName = model.FullName, UserName = model.Email, Email = model.Email, ContractStartDate = model.ContractStartDate, ContractEndDate = model.ContractEndDate, Status = model.Status, CompanyId = model.CompanyId };
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+                    ViewBag.UserList = await _userManager.GetUsersInRoleAsync(Roles.User.ToString());
+ 
+                     
 
                     var roleResult = await _userManager.AddToRoleAsync(user, Roles.User.ToString());
 
@@ -81,9 +159,14 @@ namespace SEO_Reporting_Portal.Controllers
                 }
             }
 
+            model.Companys = _context.Company.ToList();
+
             // If we got this far, something failed, redisplay form
             return View("UserForm", model);
         }
+
+
+
 
         public async Task<IActionResult> SetPassword(string id)
         {

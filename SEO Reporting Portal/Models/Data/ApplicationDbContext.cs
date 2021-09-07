@@ -13,6 +13,10 @@ namespace SEO_Reporting_Portal.Models.Data
         public DbSet<Report> Reports { get; set; }
         public DbSet<GeneralInquiry> GeneralInquiries { get; set; }
         public DbSet<ReportComment> ReportComments { get; set; }
+        public DbSet<Company> Company { get; set; }
+        public DbSet<CompanyUser> CompanyUsers { get; set; }
+
+      
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
           : base(options)

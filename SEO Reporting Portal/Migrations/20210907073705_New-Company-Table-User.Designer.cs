@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SEO_Reporting_Portal.Models.Data;
 
 namespace SEO_Reporting_Portal.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210907073705_New-Company-Table-User")]
+    partial class NewCompanyTableUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,15 +47,15 @@ namespace SEO_Reporting_Portal.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5768273a-83b6-4723-8319-a7d1134f4bdf",
-                            ConcurrencyStamp = "e3a2d0bb-36f6-4be3-8f46-6bd67cd464b7",
+                            Id = "f69adac3-cb6f-462b-b676-8a01ff211b16",
+                            ConcurrencyStamp = "bbbef937-d92b-43b2-813d-ab4323c72cc0",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "db4a5f32-62f3-42a3-9e57-ed7172980927",
-                            ConcurrencyStamp = "016e4009-fa9a-49ba-9e98-53c4f47310c1",
+                            Id = "6bc63788-0bda-4584-bc2f-b57dc3fc07f0",
+                            ConcurrencyStamp = "32382176-6881-4a43-b3d6-d3f06ec8deaa",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -166,9 +168,6 @@ namespace SEO_Reporting_Portal.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<string>("Name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -190,9 +189,6 @@ namespace SEO_Reporting_Portal.Migrations
 
                     b.Property<string>("CompanyId")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("UserId")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -349,9 +345,6 @@ namespace SEO_Reporting_Portal.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
-
-                    b.Property<string>("CompanyId")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()

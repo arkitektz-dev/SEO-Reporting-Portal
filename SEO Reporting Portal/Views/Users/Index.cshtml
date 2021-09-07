@@ -21,11 +21,12 @@
                         <tr>
                             <th scope="col">Full Name</th>
                             <th scope="col">Email</th>
+                            <th scope="col">Company</th>
                             <th scope="col">Contract Start Date</th>
                             <th scope="col">Contract End Date </th>
                             <th scope="col">Email Confirmed</th>
                             <th scope="col">Status</th>
-                            <th scope="col"></th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,11 +68,27 @@
             const response = await axios.get(API_Endpoint);
             console.log(response.data)
             const usersMarkup = response.data.map(user =>
-                `<tr id=${user.id}><td>${user.fullName}</td><td>${user.email}</td><td>${user.contractStartDate}</td><td>${user.contractEndDate}</td><td>${user.emailConfirmed}</td><td><select class="dd-user-status"><option value="Active" ${user.status === 'Active' ? 'selected' : ''}>Active</option><option value="Suspended" ${user.status === 'Suspended' ? 'selected' : ''}>Suspend</option><option value="Deleted" ${user.status === 'Deleted' ? 'selected' : ''}>Delete</option></select></td><td>${!user.emailConfirmed ? `<button class="btn btn-link btn-resend-email">Resend Email</button><a class="btn btn-link" href="/users/setPassword/${user.id}">Activate</button>` : ''}</td></tr>`
+                `<tr id=${user.id}>
+                    <td>${user.fullName}</td>
+                    <td>${user.email}</td>
+                    <td>${user.companyName}</td>
+                    <td>${user.contractStartDate}</td>
+                    <td>${user.contractEndDate}</td><td>${user.emailConfirmed}</td>
+                    <td><select class="dd-user-status"><option value="Active" ${user.status === 'Active' ? 'selected' : ''}>Active</option><option value="Suspended" ${user.status === 'Suspended' ? 'selected' : ''}>Suspend</option><option value="Deleted" ${user.status === 'Deleted' ? 'selected' : ''}>Delete</option></select></td>
+                    <td>
+                    ${!user.emailConfirmed ? 
+                    `
+                         <div class="row">
+                            <div class="col-md-2"> <a class="btn-resend-email"><i class="fas fa-envelope"></i></a></div>
+                            <div class="col-md-2"><a href="/users/setPassword/${user.id}" class=""><i class="fas fa-check"></i></a></div>
+                            <div class="col-md-2"><a href="/users/Edit?UserId=${user.id}" class=""><i class="fas fa-pen"></i> </a></div>
+                         </div>
+                    `: ''}
+                    </td></tr>`
             )
 
             $('table tbody').append(usersMarkup.join(''));
-            $('#user-table').DataTable();
+            console.log($('#user-table').DataTable());
         }
 
         async function resendEmailConfirmation(userId) {

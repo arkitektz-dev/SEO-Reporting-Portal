@@ -1,17 +1,16 @@
 ﻿@model SEO_Reporting_Portal.ViewModels.UserFormViewModel
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{ ViewData["Title"] = "User"; }
+@{
+    ViewData["Title"] = "EditUserForm";
+}
 
 <div class="row">
     <div class="col-12">
         <div class="card mb-3">
             <div class="card-header">Add New User</div>
             <div class="card-body">
-                <form asp-controller="Users" asp-action="Create" method="post">
+                <form asp-controller="Users" asp-action="EditUser" method="post">
                     <div asp-validation-summary="All" class="text-danger"></div>
-                     
+                    <input type="hidden" asp-for="UserId" />
                     <div class="form-group">
                         <label asp-for="FullName"></label>
                         <input asp-for="FullName" class="form-control" />
@@ -35,11 +34,10 @@
 
                     <div class="form-group">
                         <label asp-for="CompanyId"></label>
-                         <br />
+                        <br />
                         <select asp-for="CompanyId" asp-items="@(new SelectList(Model.Companys,"Id","Name",Model.CompanyId))" class="form-control col-sm-4 user-select2"></select>
-                      
-                    </div>
 
+                    </div>
 
                     <div class="form-group">
                         <div class="custom-control custom-radio">
@@ -70,10 +68,9 @@
 
 
     <script>
-        $(document).ready(function () {
+    $(document).ready(function () {
             $('.user-select2').select2();
-        });
-    </script>
+        });</script>
     <partial name="_ValidationScriptsPartial" />
 }
 

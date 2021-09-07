@@ -19,5 +19,8 @@ namespace SEO_Reporting_Portal.Models
 
         [Required]
         public AccountStatus Status { get; set; }
+
+        public string CompanyId { get; set; }
+
     }
 }
